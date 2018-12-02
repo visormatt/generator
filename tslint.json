@@ -9,7 +9,13 @@
     "align": [false],
     "import-name": false,
     "interface-name": [true, "never-prefix"],
-    "max-line-length": [true, { "limit": 80, "ignore-pattern": "^import " }],
+    "max-line-length": [
+      true,
+      {
+        "ignore-pattern": "^import ",
+        "limit": 80
+      }
+    ],
     "no-console": false,
     "no-empty-interface": false,
     "no-shadowed-variable": false,

@@ -13,12 +13,9 @@ module.exports = {
   // https://goo.gl/VBULZE
   collectCoverageFrom: [
     'src/**/*.js',
+    'src/**/*.jsx',
     'src/**/*.ts',
-    'src/**/*.tsx',
-
-    // Ignore our test & CSS types
-    '!*.css.d.ts',
-    '!*.test.js'
+    'src/**/*.tsx'
   ],
 
   // https://goo.gl/6ydeXP
@@ -41,18 +38,14 @@ module.exports = {
   globals: {
     mount: true,
     render: true,
-    shallow: true,
-
-    'ts-jest': {
-      tsConfigFile: 'tsconfig.json'
-    }
+    shallow: true
   },
 
   // https://goo.gl/fhrRke
   moduleDirectories: ['node_modules'],
 
   // https://goo.gl/PoKsCn
-  moduleFileExtensions: ['css', 'js', 'jsx', 'json', 'node', 'ts', 'tsx'],
+  moduleFileExtensions: ['css', 'js', 'jsx', 'json', 'ts', 'tsx'],
 
   // https://goo.gl/tMECYz
   moduleNameMapper: {},
@@ -71,14 +64,11 @@ module.exports = {
 
   // https://goo.gl/qoKy1U
   transform: {
-    '^.+\\.js$': 'ts-jest',
-    '^.+\\.(ts|tsx)$': 'ts-jest'
+    '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest'
   },
 
   // https://goo.gl/3j69X7
-  transformIgnorePatterns: [
-    // 'node_modules/(?!(@thredup)/)'
-  ],
+  transformIgnorePatterns: [],
 
   // https://goo.gl/8hnQTn
   verbose: false

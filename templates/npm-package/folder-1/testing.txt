@@ -6,12 +6,8 @@ veniam! Accusantium, neque fugiat deserunt officiis sint voluptatem?
 
 -----------------------------------
 
-<% if (user) { %>
-  USER VARIABLE
-<% } %>
-
 <% if (value) { %>
-  VALUE VARIABLE
+  <%= value %> VARIABLE
 <% } %>
 
 -----------------------------------
