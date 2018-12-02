@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "checkJs": false,
+    // "declaration": false,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["dom", "es6", "esnext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "noImplicitAny": true,
+    "noUnusedParameters": true,
+    "outDir": "./dist",
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es5"
+  },
+
+  "exclude": [
+    "dist/",
+  ],
+
+  "include": [
+    "src/",
+  ],
+
+  "types": [
+    "jest"
+  ]
+}

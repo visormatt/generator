@@ -1,0 +1,97 @@
+{
+  "name": "generator-react-up",
+  "version": "1.0.2",
+  "author": {
+    "name": "Matthew D. Shelley",
+    "email": "dewayne.shelley@gmail.com",
+    "url": "http://www.visualmarvel.com"
+  },
+  "description": "A simple and customizable React Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
+  "homepage": "https://visormatt.github.io/generator-react-up/",
+  "files": [
+    "generators",
+    "templates"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "React Generator",
+    "boiler-plate",
+    "component",
+    "ES6 Classes",
+    "Pure Functions",
+    "Stateless Component",
+    "Yeoman Generator",
+    "yeoman-generator"
+  ],
+  "license": "Apache-2.0",
+  "repository": "visormatt/generator-react-up",
+  "scripts": {
+    "build": "npm run build:types && npm run build:js",
+    "build:dev": "npm run build:js -- --source-maps inline --watch",
+    "build:js": "babel src --out-dir ./generators --extensions \".js,.ts,.tsx\" --source-maps inline",
+    "build:types": "tsc --emitDeclarationOnly",
+    "--------------build": "npm run build:types && npm run build:js",
+    "lint": "npm run lint:js && npm run lint:ts",
+    "lint:js": "eslint ./src",
+    "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
+    "test": "jest --coverage",
+    "test:ci": "jest --coverage && codecov --token=f63d9cb1-4d9f-41c2-b2c3-e7434ad6a173",
+    "test:coverage": "jest --coverage --watch",
+    "test:logs": "jest --coverage --runInBand --watch",
+    "test:update": "jest --updateSnapshot --watchAll --watch",
+    "test:watch": "jest --onlyChanged --watch",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "postversion": "git push && git push --tags",
+    "version": "npm run build && git add -A"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "@types/inquirer": "0.0.43",
+    "@types/jest": "^23.3.10",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-import-resolver-alias": "^1.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.2.0",
+    "inquirer": "^6.2.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "lodash": "^4.17.11",
+    "prettier": "^1.15.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --config .eslintrc.js"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --project tsconfig.json --config tslint.json'"
+    ]
+  }
+}
