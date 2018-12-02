@@ -1,12 +1,39 @@
 // Internal
-import { validation } from '../validation';
+import { Validation } from '../validation';
 
-describe('validation', () => {
-  it('should pass', () => {
-    expect(validation('valid-package-name')).toBe(true);
+describe('Validation', () => {
+  let method: (...args: any) => any;
+
+  describe('required', () => {
+    beforeEach(() => {
+      method = Validation.required;
+    });
+
+    it('should pass', () => {
+      expect(method(true)).toBe(true);
+      expect(method('valid')).toBe(true);
+      expect(method('valid-package-name')).toBe(true);
+    });
+
+    it('should fail', () => {
+      expect(method(false)).not.toBe(true);
+      expect(method()).not.toBe(true);
+      expect(method('')).not.toBe(true);
+    });
   });
 
-  it('should fail', () => {
-    expect(validation('not valid name')).not.toBe(true);
+  describe('slug', () => {
+    beforeEach(() => {
+      method = Validation.slug;
+    });
+
+    it('should pass', () => {
+      expect(method('valid-package-name')).toBe(true);
+    });
+
+    it('should fail', () => {
+      expect(method()).not.toBe(true);
+      expect(method('')).not.toBe(true);
+    });
   });
 });

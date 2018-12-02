@@ -6,9 +6,9 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 
 // Internal
+import { prompts } from './setup/prompts';
 import { writeFile } from './utils/files';
 import { PATH_CURRENT, PACKAGE_ROOT } from './utils/config';
-import { QUESTIONS } from './questions/setup';
 
 const createDirectoryContents = (
   pathTemplate: string,
@@ -31,7 +31,7 @@ const createDirectoryContents = (
   });
 };
 
-inquirer.prompt(QUESTIONS).then((answers: any) => {
+inquirer.prompt(prompts).then((answers: any) => {
   const projectChoice = answers['project-choice'];
   const projectName = answers['project-name'];
   const pathTemplate = `${PACKAGE_ROOT}/templates/${projectChoice}`;

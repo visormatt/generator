@@ -1,4 +1,5 @@
 // Internal
+import { chalk } from '../chalk';
 import { checkbox } from '../checkbox';
 import { confirm } from '../confirm';
 import { input } from '../input';
@@ -7,6 +8,7 @@ import { password } from '../password';
 
 describe('Examples', () => {
   it('should export some examples', () => {
+    expect(typeof chalk).toBe('function');
     expect(typeof checkbox).toBe('function');
     expect(typeof confirm).toBe('function');
     expect(typeof input).toBe('function');

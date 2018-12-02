@@ -1,12 +1,18 @@
 // Internal
 import { REGEX_VALID_PACKAGE } from '../utils/regex';
 
-const validation = (input: string) => {
-  if (REGEX_VALID_PACKAGE.test(input)) {
-    return true;
-  }
+const Validation = {
+  required(input?: any) {
+    if (input && input.trim() !== '') return true;
+    return 'This input is required.';
+  },
 
-  return 'Project name may only include letters, numbers, underscores and hashes.';
+  slug(input?: string) {
+    if (!input) return this.required();
+    if (input && REGEX_VALID_PACKAGE.test(input)) return true;
+
+    return 'Allowed characters are; letters, numbers, underscores and hashes.';
+  }
 };
 
-export { validation };
+export { Validation };
