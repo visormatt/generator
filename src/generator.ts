@@ -106,4 +106,4 @@ const generator = async (config: any) => {
   });
 };
 
-export { generator };
+export { createQuestions, createDirectoryContents, generator };

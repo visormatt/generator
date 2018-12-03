@@ -6,9 +6,7 @@ import { resolve } from 'path';
 import { setup } from './index';
 import { logger } from '../utils/logger';
 import { readFile, renderTemplate } from '../utils/files';
-import { FILE_CONFIG, FILE_CUSTOMIZE, PATH_CURRENT } from '../utils/config';
-// export const FILE_CONFIG = '.generator.config';
-// export const FILE_CUSTOMIZE = '.generator.js';
+import { FILE_CONFIG, PATH_CURRENT } from '../utils/config';
 
 /**
  * @name readConfig
@@ -17,7 +15,6 @@ import { FILE_CONFIG, FILE_CUSTOMIZE, PATH_CURRENT } from '../utils/config';
 const readConfig = (path: string) => {
   const file = readFile(path);
   const json = JSON.parse(file);
-
   const message = `👀 Configuration file: ${chalk.cyan(path)} \n`;
   logger(message);
 
