@@ -4,7 +4,8 @@
 import '@babel/polyfill';
 
 // Internal
-import { checkForSettings } from './setup/index';
+import { checkForSettings } from './setup/helper';
+import { setup } from './setup/index';
 
 /**
  * @name init
@@ -12,6 +13,8 @@ import { checkForSettings } from './setup/index';
  */
 const init = async () => {
   await checkForSettings();
+
+  await setup();
 };
 
 /**

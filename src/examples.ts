@@ -6,9 +6,9 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 
 // Internal
-import { prompts } from './setup/prompts';
+// import { se } from './setup';
 import { writeFile } from './utils/files';
-import { PATH_CURRENT, PACKAGE_ROOT } from './utils/config';
+import { PATH_CURRENT, PATH_PACKAGE } from './utils/config';
 
 const createDirectoryContents = (
   pathTemplate: string,
@@ -31,12 +31,12 @@ const createDirectoryContents = (
   });
 };
 
-inquirer.prompt(prompts).then((answers: any) => {
-  const projectChoice = answers['project-choice'];
-  const projectName = answers['project-name'];
-  const pathTemplate = `${PACKAGE_ROOT}/templates/${projectChoice}`;
+// inquirer.prompt(prompts).then((answers: any) => {
+//   const projectChoice = answers['project-choice'];
+//   const projectName = answers['project-name'];
+//   const pathTemplate = `${PATH_PACKAGE}/templates/${projectChoice}`;
 
-  fs.mkdirSync(`${PATH_CURRENT}/${projectName}`);
+//   fs.mkdirSync(`${PATH_CURRENT}/${projectName}`);
 
-  createDirectoryContents(pathTemplate, projectName);
-});
+//   createDirectoryContents(pathTemplate, projectName);
+// });

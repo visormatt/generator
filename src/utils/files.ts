@@ -7,12 +7,7 @@ const readFile = (path: string) => {
 };
 
 const renderTemplate = (template: string, destination: string, data: any) => {
-  try {
-    const file = ejs.renderFile(template, data, writeFile(destination));
-    console.log('--- SUCCESS', file);
-  } catch (error) {
-    console.error('--- ERROR', error);
-  }
+  ejs.renderFile(template, data, writeFile(destination));
 };
 
 const writeFile = (path: string) => (error: any, payload: any) => {
