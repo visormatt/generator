@@ -1,7 +1,7 @@
 // Internal
 import findUp from 'find-up';
 import { readConfig, writeConfig } from './config';
-import { NAME_CONFIGURATION } from '../utils/config';
+import { FILE_CONFIG } from '../utils/config';
 
 /**
  * @name checkForSettings
@@ -9,7 +9,7 @@ import { NAME_CONFIGURATION } from '../utils/config';
  * This lets us create many configurations by simply adding a file.
  */
 const checkForSettings = async () => {
-  const config = await findUp(NAME_CONFIGURATION);
+  const config = await findUp(FILE_CONFIG);
 
   if (config) return readConfig(config);
 

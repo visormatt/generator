@@ -4,10 +4,10 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 
 // Internal
-import { Validation } from './utils/validation';
 import { checkFile, readFile, writeFile } from './utils/files';
-import { PATH_CURRENT, PATH_PACKAGE } from './utils/config';
 import { logger } from './utils/logger';
+import { Validation } from './utils/validation';
+import { FILE_CUSTOMIZE, PATH_CURRENT } from './utils/config';
 
 /**
  * @name createQuestions
@@ -19,9 +19,9 @@ const createQuestions = (data: any) => {
 
   return [
     {
-      name: 'template',
+      name: 'type',
       type: 'list',
-      message: 'What project template would you like to generate?',
+      message: 'What project template would you like to generate?\n',
       choices: fs.readdirSync(templates)
     },
     {
@@ -44,8 +44,8 @@ const createDirectoryContents = (
   data: any
 ) => {
   const createFile = (file: string) => {
-    // This is only needed in the "template"
-    if (file === '.generator.js') return;
+    // This is only needed in the "template" folder for customization
+    if (file === FILE_CUSTOMIZE) return;
 
     const templatePath = `${template}/${file}`;
     const stats = fs.statSync(templatePath);
@@ -57,7 +57,6 @@ const createDirectoryContents = (
   };
 
   const filesToCreate = fs.readdirSync(template);
-  const { name } = data;
 
   filesToCreate.forEach(createFile);
 };
@@ -70,26 +69,17 @@ const generator = async (config: any) => {
   const questions = createQuestions(config);
 
   return await inquirer.prompt(questions).then(async (answers: any) => {
-    const { name, template } = answers;
+    const { name, type } = answers;
     const { templates } = config;
-
-    console.log('---- templates', templates);
-
-    const path = `${templates}/${template}`;
-    const pathQuestions = `${path}/.generator.js`;
-    console.log('=== pathQuestions', pathQuestions);
-
+    const path = `${templates}/${type}`;
+    const pathQuestions = `${path}/${FILE_CUSTOMIZE}`;
     const hasQuestions = checkFile(pathQuestions);
 
     let templateAnswers = {};
 
     if (hasQuestions) {
-      try {
-        const templateQuestions = require(pathQuestions);
-        templateAnswers = await inquirer.prompt(templateQuestions);
-      } catch (error) {
-        console.error('---> error', error);
-      }
+      const templateQuestions = require(pathQuestions);
+      templateAnswers = await inquirer.prompt(templateQuestions);
     } else {
       logger('💭 Tip: Create a `.generator.js` file in the folder');
     }

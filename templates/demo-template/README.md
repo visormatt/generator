@@ -1,5 +1,3 @@
-# <%= name %>
+# <%= name %> ~ <%= customVar %>
 
-> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti consequuntur odit repudiandae fugit itaque error autem, consequatur ratione neque, ipsum dolorum? Blanditiis ipsam inventore hic dolor, optio quas ipsa?
-
-## <%= customVar %>
+> Above is an example of how we can further customize each of the templates we create. This is the largest difference between this tool and the original generator.

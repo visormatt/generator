@@ -25,7 +25,7 @@ class <%= name %> extends React.Component {
     );
   }
 
-  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  onChange = (event) => {
     console.log('- onChange event', this.state, this.props);
   };
 }

@@ -21,8 +21,8 @@ describe('files', () => {
   });
 
   it('should write a file', () => {
-    const path = resolve(__dirname, '../../../temp');
-    const callback = writeFile(`${path}/test.txt`);
+    const path = resolve(__dirname, '../../__test__');
+    const callback = writeFile(`${path}/template.txt`);
     const file = callback(null, 'some value in here');
 
     expect(file).toBe(undefined);

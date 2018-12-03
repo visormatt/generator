@@ -111,6 +111,7 @@ module.exports = {
         allowNamedFunctions: true
       }
     ],
+    'react/jsx-filename-extension': ['js', 'jsx', 'ts', 'tsx'],
     'space-before-function-paren': 0,
     'space-in-parens': ['error', 'never'],
     'template-curly-spacing': ['error', 'never']

@@ -1,6 +1,6 @@
 // Vendor
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 
 // CSS
 import styles from './styles.css';
