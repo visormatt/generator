@@ -1,9 +1,7 @@
-// https://github.com/yannickcr/eslint-plugin-react
 module.exports = {
   extends: ['airbnb', 'prettier'],
 
   env: {
-    browser: true,
     node: true
   },
 
@@ -36,7 +34,6 @@ module.exports = {
 
   plugins: ['react', 'import', 'prettier'],
 
-  // Any customization we want to override
   rules: {
     'array-callback-return': 0,
     'arrow-parens': 0,
@@ -120,12 +117,6 @@ module.exports = {
   },
 
   settings: {
-    /**
-     * @external https://goo.gl/uzvmzQ
-     * @description If you want to make changes to this `alias` object, please
-     * read this doc ~ https://goo.gl/wSqzro
-     */
-
     'import/resolver': {
       alias: {
         map: [],

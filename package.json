@@ -1,15 +1,16 @@
 {
-  "name": "tooling",
-  "version": "1.0.2",
+  "name": "generator",
+  "version": "1.0.0",
   "author": {
-    "name": "Matthew D. Shelley",
+    "name": "Matthew D. Scholta",
     "email": "dewayne.shelley@gmail.com",
     "url": "https://www.mattscholta.com"
   },
   "bin": {
-    "generate": "./dist/index.js"
+    "generate": "./dist/index.js",
+    "generate:setup": "./dist/setup.js"
   },
-  "description": "A simple and customizable React Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
+  "description": "A simple and customizable Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "dependencies": {
     "chalk": "^2.4.1",
     "chalk-pipe": "^2.0.0",
@@ -59,23 +60,14 @@
     "generators",
     "templates"
   ],
-  "homepage": "https://visormatt.github.io/tooling/",
+  "homepage": "https://github.com/visormatt/tooling",
   "main": "dist/index.js",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
-  "keywords": [
-    "React Generator",
-    "boiler-plate",
-    "component",
-    "ES6 Classes",
-    "Pure Functions",
-    "Stateless Component",
-    "Yeoman Generator",
-    "yeoman-generator"
-  ],
+  "keywords": [],
   "license": "Apache-2.0",
   "lint-staged": {
     "*.js": [
@@ -94,6 +86,7 @@
     "lint": "npm run lint:js && npm run lint:ts",
     "lint:js": "eslint ./src",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
+    "setup": "node dist/setup.js",
     "start": "node dist/index.js",
     "test": "jest --coverage",
     "test:ci": "jest --coverage && codecov --token=",

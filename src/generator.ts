@@ -9,35 +9,50 @@ import { checkFile, readFile, writeFile } from './utils/files';
 import { PATH_CURRENT, PATH_PACKAGE } from './utils/config';
 import { logger } from './utils/logger';
 
-const questions = [
-  {
-    name: 'template',
-    type: 'list',
-    message: 'What project template would you like to generate?',
-    choices: fs.readdirSync(`${PATH_PACKAGE}/templates`)
-  },
-  {
-    default: 'AnExampleComponent',
-    name: 'name',
-    type: 'input',
-    message: 'Project name:',
-    validate: Validation.required
-  }
-];
+/**
+ * @name createQuestions
+ * @description We may or may not require information when generating
+ * our questions. This is one way we can tackle that.
+ */
+const createQuestions = (data: any) => {
+  const { templates } = data;
 
+  return [
+    {
+      name: 'template',
+      type: 'list',
+      message: 'What project template would you like to generate?',
+      choices: fs.readdirSync(templates)
+    },
+    {
+      default: 'AnExampleComponent',
+      name: 'name',
+      type: 'input',
+      message: 'Project name:',
+      validate: Validation.required
+    }
+  ];
+};
+
+/**
+ * @name createDirectoryContents
+ * @description tbd...
+ */
 const createDirectoryContents = (
   template: string,
   destination: string,
   data: any
 ) => {
   const createFile = (file: string) => {
+    // This is only needed in the "template"
+    if (file === '.generator.js') return;
+
     const templatePath = `${template}/${file}`;
-    const templateData = { ...data, name };
     const stats = fs.statSync(templatePath);
 
     if (stats.isFile()) {
       const writePath = `${PATH_CURRENT}/${destination}/${file}`;
-      ejs.renderFile(templatePath, templateData, writeFile(writePath));
+      ejs.renderFile(templatePath, data, writeFile(writePath));
     }
   };
 
@@ -47,10 +62,20 @@ const createDirectoryContents = (
   filesToCreate.forEach(createFile);
 };
 
-const generator = async (config: any) =>
-  await inquirer.prompt(questions).then(async (answers: any) => {
+/**
+ * @name generator
+ * @description tbd...
+ */
+const generator = async (config: any) => {
+  const questions = createQuestions(config);
+
+  return await inquirer.prompt(questions).then(async (answers: any) => {
     const { name, template } = answers;
-    const path = `${PATH_PACKAGE}/templates/${template}`;
+    const { templates } = config;
+
+    console.log('---- templates', templates);
+
+    const path = `${templates}/${template}`;
     const pathQuestions = `${path}/.generator.js`;
     console.log('=== pathQuestions', pathQuestions);
 
@@ -82,5 +107,6 @@ const generator = async (config: any) =>
     fs.mkdirSync(`${PATH_CURRENT}/${name}`);
     createDirectoryContents(path, name, data);
   });
+};
 
 export { generator };

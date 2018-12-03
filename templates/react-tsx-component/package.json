@@ -1,7 +1,3 @@
 {
-  "author": "<%= domain %>",
-  "devDependencies": {},
-  "main": "./<%= name %>.tsx",
-  "private": true,
-  "version": "1.0.0"
+  "main": "./<%= name %>.tsx"
 }

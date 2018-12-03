@@ -13,4 +13,3 @@ coverage/
 dist/
 generators/
 node_modules/
-temp/

@@ -9,14 +9,13 @@ import { generator } from './generator';
 
 /**
  * @name init
- * @description Ensures the generator is setup to run
+ * @description Ensures the generator is setup to run and then
+ * it kicks things off prompting the user to go with one of the
+ * available template folders
  */
 const init = async () => {
   const config = await checkForSettings();
   await generator(config);
 };
 
-/**
- * And here we go
- */
 init();

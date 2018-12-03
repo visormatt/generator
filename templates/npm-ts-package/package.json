@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "author": "<%= domain %>",
   "bugs": {
-    "url": "https://github.com/thredup/shamrock/issues"
+    "url": "https://github.com/visormatt/mustket/issues"
   },
   "description": "TBD...",
   "devDependencies": {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thredup/shamrock.git"
+    "url": "git+https://github.com/visormatt/mustket.git"
   },
   "scripts": {
     "build": "npm run build:prod",

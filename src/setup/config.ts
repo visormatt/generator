@@ -8,20 +8,31 @@ import { logger } from '../utils/logger';
 import { readFile, renderTemplate } from '../utils/files';
 import { PATH_CURRENT } from '../utils/config';
 
+/**
+ * @name readConfig
+ * @description tbd...
+ */
 const readConfig = async (path: string) => {
   const file = readFile(path);
   const json = JSON.parse(file);
-  const pretty = JSON.stringify(json, null, 2);
 
   const message = `👀 Configuration file: ${chalk.cyan(path)} \n`;
   logger(message);
-  // logger(message, pretty);
 
   return json;
 };
 
-const writeConfig = async () => {
-  const message = '⚠️  No configuration file found, running setup.\n';
+/**
+ * @name writeConfig
+ * @description tbd...
+ */
+const writeConfig = async (prompt = true) => {
+  let message = 'Running generator setup.\n';
+
+  if (prompt) {
+    message = '⚠️  No configuration file found, running setup.\n';
+  }
+
   logger(chalk.red(message));
 
   // Otherwise we create em
