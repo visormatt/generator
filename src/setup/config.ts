@@ -6,13 +6,15 @@ import { resolve } from 'path';
 import { setup } from './index';
 import { logger } from '../utils/logger';
 import { readFile, renderTemplate } from '../utils/files';
-import { PATH_CURRENT } from '../utils/config';
+import { FILE_CONFIG, FILE_CUSTOMIZE, PATH_CURRENT } from '../utils/config';
+// export const FILE_CONFIG = '.generator.config';
+// export const FILE_CUSTOMIZE = '.generator.js';
 
 /**
  * @name readConfig
  * @description tbd...
  */
-const readConfig = async (path: string) => {
+const readConfig = (path: string) => {
   const file = readFile(path);
   const json = JSON.parse(file);
 
@@ -37,8 +39,8 @@ const writeConfig = async (prompt = true) => {
 
   // Otherwise we create em
   const data = await setup();
-  const template = resolve(__dirname, '../../src/setup/.generator.config');
-  const destination = resolve(PATH_CURRENT, '.generator.config');
+  const template = resolve(__dirname, `../../src/${FILE_CONFIG}`);
+  const destination = resolve(PATH_CURRENT, FILE_CONFIG);
   const path = chalk.greenBright(destination);
 
   renderTemplate(template, destination, data);

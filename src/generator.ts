@@ -4,7 +4,7 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 
 // Internal
-import { checkFile, readFile, writeFile } from './utils/files';
+import { checkFile, writeFile } from './utils/files';
 import { logger } from './utils/logger';
 import { Validation } from './utils/validation';
 import { FILE_CUSTOMIZE, PATH_CURRENT } from './utils/config';
@@ -17,18 +17,21 @@ import { FILE_CUSTOMIZE, PATH_CURRENT } from './utils/config';
 const createQuestions = (data: any) => {
   const { templates } = data;
 
+  // tslint:disable-next-line
+  const name = `Lets give it a name, this will be used to create the directory as well.`;
+
   return [
     {
+      default: 1,
       name: 'type',
       type: 'list',
-      message: 'What project template would you like to generate?\n',
+      message: 'What project template would you like to generate?',
       choices: fs.readdirSync(templates)
     },
     {
-      default: 'AnExampleComponent',
       name: 'name',
       type: 'input',
-      message: 'Project name:',
+      message: `${name}\n`,
       validate: Validation.required
     }
   ];
@@ -79,9 +82,13 @@ const generator = async (config: any) => {
 
     if (hasQuestions) {
       const templateQuestions = require(pathQuestions);
-      templateAnswers = await inquirer.prompt(templateQuestions);
+      if (typeof templateQuestions === 'function') {
+        templateAnswers = await inquirer.prompt(templateQuestions(config));
+      } else {
+        templateAnswers = await inquirer.prompt(templateQuestions);
+      }
     } else {
-      logger('💭 Tip: Create a `.generator.js` file in the folder');
+      logger(`\n💭 Tip: Create a "${FILE_CUSTOMIZE}" file. \n`);
     }
 
     const data = {
@@ -92,7 +99,7 @@ const generator = async (config: any) => {
       slug: 'TestingItOut'
     };
 
-    console.log('---> data ', data);
+    // console.log('---> data ', data);
 
     fs.mkdirSync(`${PATH_CURRENT}/${name}`);
     createDirectoryContents(path, name, data);

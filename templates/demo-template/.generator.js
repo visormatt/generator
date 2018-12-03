@@ -6,13 +6,18 @@ var Validation = require('../../dist/utils/validation').Validation;
  * any additional information we need and we can bolt it into each
  * template folder as optionally
  */
-var questions = [
-  {
-    message: 'Collect additional information per "template".',
-    name: 'customVar',
-    type: 'input',
-    validate: Validation.required
-  }
-];
+var questions = (config) => {
+  console.log('----> config', config);
+
+  return [
+    {
+      default: 'default custom variable',
+      message: 'Collect additional information per "template".',
+      name: 'customVar',
+      type: 'input'
+      // validate: Validation.required
+    }
+  ];
+};
 
 module.exports = questions;
