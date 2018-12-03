@@ -1,0 +1,5 @@
+@import '@thredup/styleguide/src/variables';
+
+.component {
+  background-color: transparent;
+}

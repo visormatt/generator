@@ -1,0 +1,7 @@
+{
+  "author": "<%= domain %>",
+  "devDependencies": {},
+  "main": "./<%= name %>.tsx",
+  "private": true,
+  "version": "1.0.0"
+}

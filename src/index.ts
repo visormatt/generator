@@ -5,16 +5,15 @@ import '@babel/polyfill';
 
 // Internal
 import { checkForSettings } from './setup/helper';
-import { setup } from './setup/index';
+import { generator } from './generator';
 
 /**
  * @name init
  * @description Ensures the generator is setup to run
  */
 const init = async () => {
-  await checkForSettings();
-
-  await setup();
+  const config = await checkForSettings();
+  await generator(config);
 };
 
 /**

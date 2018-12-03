@@ -2,6 +2,13 @@
 import ejs from 'ejs';
 import fs from 'fs';
 
+const checkFile = (path: string) => {
+  const stats = fs.statSync(path);
+  const isFile = stats.isFile();
+
+  return isFile;
+};
+
 const readFile = (path: string) => {
   return fs.readFileSync(path, 'utf8');
 };
@@ -16,4 +23,4 @@ const writeFile = (path: string) => (error: any, payload: any) => {
   fs.writeFileSync(path, payload, 'utf8');
 };
 
-export { readFile, renderTemplate, writeFile };
+export { checkFile, readFile, renderTemplate, writeFile };

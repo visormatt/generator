@@ -13,8 +13,9 @@ const readConfig = async (path: string) => {
   const json = JSON.parse(file);
   const pretty = JSON.stringify(json, null, 2);
 
-  const message = `Configuration file: ${chalk.cyan(path)}`;
-  logger(message, pretty);
+  const message = `👀 Configuration file: ${chalk.cyan(path)} \n`;
+  logger(message);
+  // logger(message, pretty);
 
   return json;
 };
@@ -25,7 +26,7 @@ const writeConfig = async () => {
 
   // Otherwise we create em
   const data = await setup();
-  const template = resolve(__dirname, '../../templates/.generator.config');
+  const template = resolve(__dirname, '../../src/setup/.generator.config');
   const destination = resolve(PATH_CURRENT, '.generator.config');
   const path = chalk.greenBright(destination);
 
