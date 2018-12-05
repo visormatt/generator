@@ -6,6 +6,7 @@ import '@babel/polyfill';
 // Internal
 import { checkForSettings } from './setup/helper';
 import { generator } from './generator';
+import { Generator as GeneratorClass } from './Class';
 
 /**
  * @name init
@@ -16,6 +17,11 @@ import { generator } from './generator';
 const init = async () => {
   const config = await checkForSettings();
   await generator(config);
+
+  // return new GeneratorClass({
+  //   debug: true,
+  //   ...config
+  // });
 };
 
 init();
