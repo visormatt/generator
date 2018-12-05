@@ -11,11 +11,39 @@ const checkFile = (path: string) => {
 };
 
 /**
+ * @name createDirectory
+ * @description Simple method that checks for and creates a folder
+ * if it does not exist
+ */
+const createDirectory = (path: string) => {
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(path, 0o744);
+  }
+};
+
+/**
  * @name readFile
  * @description Synchronous read of a file
  */
 const readFile = (path: string) => {
   return fs.readFileSync(path, 'utf8');
+};
+
+/**
+ * @name renameFile
+ * @description Using an "=" prefix and the "key" of the value we'd like to
+ * use for the new file name. This is most commonly the "name" we collect
+ * as part of the default prompt of questions. But other values can be made
+ * available as needed.
+ */
+const renameFile = (filename: string, data: any = {}) => {
+  if (!filename.startsWith('=')) return filename;
+
+  const parts = filename.split('.');
+  const key = parts[0].substr(1);
+  const name = data[key] ? data[key] : 'index';
+
+  return `${name}.${parts[1]}`;
 };
 
 /**
@@ -37,4 +65,11 @@ const writeFile = (path: string) => (error: any, payload: any) => {
   fs.writeFileSync(path, payload, 'utf8');
 };
 
-export { checkFile, readFile, renderTemplate, writeFile };
+export {
+  checkFile,
+  createDirectory,
+  readFile,
+  renameFile,
+  renderTemplate,
+  writeFile
+};

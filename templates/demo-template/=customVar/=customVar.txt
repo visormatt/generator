@@ -1,0 +1,1 @@
+Our custom variable ~ <%= customVar %>

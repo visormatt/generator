@@ -4,10 +4,45 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 
 // Internal
-import { checkFile, writeFile } from './utils/files';
+import {
+  checkFile,
+  createDirectory,
+  renameFile,
+  writeFile
+} from './utils/files';
 import { logger } from './utils/logger';
 import { Validation } from './utils/validation';
 import { FILE_CUSTOMIZE, PATH_CURRENT } from './utils/config';
+
+/**
+ * @name createFile
+ * @description tbd...
+ */
+const createFile = (
+  file: string,
+  template: string,
+  destination: string,
+  data: any
+) => {
+  // This is only needed in the "template" folder for customization
+  if (file === FILE_CUSTOMIZE) return;
+
+  const filename = renameFile(file, data);
+  const templatePath = `${template}/${file}`;
+  const stats = fs.statSync(templatePath);
+  const path = `${PATH_CURRENT}/${destination}`;
+
+  const writePath = `${path}/${filename}`;
+
+  if (stats.isFile()) {
+    ejs.renderFile(templatePath, data, writeFile(writePath));
+  } else {
+    const newDestination = `${destination}/${file}`;
+    createDirectory(newDestination);
+    console.log('---> NOT A FILE', templatePath, newDestination);
+    copyTemplate(templatePath, newDestination, data);
+  }
+};
 
 /**
  * @name createQuestions
@@ -35,42 +70,6 @@ const createQuestions = (data: any) => {
       validate: Validation.required
     }
   ];
-};
-
-/**
- * @name renameFile
- * @description Using an "=" prefix and the "key" of the value we'd like to
- * use for the new file name. This is most commonly the "name" we collect
- * as part of the default prompt of questions. But other values can be made
- * available as needed.
- */
-const renameFile = (filename: string, data: any = {}) => {
-  if (!filename.startsWith('=')) return filename;
-
-  const parts = filename.split('.');
-  const key = parts[0].substr(1);
-  const name = data[key] ? data[key] : 'index';
-
-  return `${name}.${parts[1]}`;
-};
-
-const createFile = (
-  file: string,
-  template: string,
-  destination: string,
-  data: any
-) => {
-  // This is only needed in the "template" folder for customization
-  if (file === FILE_CUSTOMIZE) return;
-
-  const filename = renameFile(file, data);
-  const templatePath = `${template}/${file}`;
-  const stats = fs.statSync(templatePath);
-
-  if (stats.isFile()) {
-    const writePath = `${PATH_CURRENT}/${destination}/${filename}`;
-    ejs.renderFile(templatePath, data, writeFile(writePath));
-  }
 };
 
 /**

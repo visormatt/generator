@@ -7,7 +7,7 @@ var Validation = require('../../dist/utils/validation').Validation;
  * template folder as optionally
  */
 var questions = (config) => {
-  console.log('----> config', config);
+  // console.log('----> config', config);
 
   return [
     {
