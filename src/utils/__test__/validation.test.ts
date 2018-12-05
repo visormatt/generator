@@ -35,5 +35,10 @@ describe('Validation', () => {
       expect(method()).not.toBe(true);
       expect(method('')).not.toBe(true);
     });
+
+    it('should return an error message', () => {
+      const result = method('not a valid name');
+      expect(typeof result).toBe('string');
+    });
   });
 });

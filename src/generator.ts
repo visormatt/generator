@@ -37,6 +37,23 @@ const createQuestions = (data: any) => {
   ];
 };
 
+/**
+ * @name renameFile
+ * @description Using an "=" prefix and the "key" of the value we'd like to
+ * use for the new file name. This is most commonly the "name" we collect
+ * as part of the default prompt of questions. But other values can be made
+ * available as needed.
+ */
+const renameFile = (filename: string, data: any = {}) => {
+  if (!filename.startsWith('=')) return filename;
+
+  const parts = filename.split('.');
+  const key = parts[0].substr(1);
+  const name = data[key] ? data[key] : 'index';
+
+  return `${name}.${parts[1]}`;
+};
+
 const createFile = (
   file: string,
   template: string,
@@ -46,16 +63,7 @@ const createFile = (
   // This is only needed in the "template" folder for customization
   if (file === FILE_CUSTOMIZE) return;
 
-  let filename = file;
-
-  if (filename.startsWith('=')) {
-    const parts = filename.split('.');
-    const key = parts[0].substr(1);
-
-    filename = `${data[key]}.${parts[1]}`;
-    console.log('----> filename', filename);
-  }
-
+  const filename = renameFile(file, data);
   const templatePath = `${template}/${file}`;
   const stats = fs.statSync(templatePath);
 
@@ -66,17 +74,11 @@ const createFile = (
 };
 
 /**
- * @name createDirectoryContents
+ * @name copyTemplate
  * @description tbd...
  */
-const createDirectoryContents = (
-  template: string,
-  destination: string,
-  data: any
-) => {
+const copyTemplate = (template: string, destination: string, data: any) => {
   const filesToCreate = fs.readdirSync(template);
-
-  console.log('---> filesToCreate', filesToCreate);
 
   filesToCreate.forEach((file: string) => {
     createFile(file, template, destination, data);
@@ -121,8 +123,8 @@ const generator = async (config: any) => {
     // console.log('---> data ', data);
 
     fs.mkdirSync(`${PATH_CURRENT}/${name}`);
-    createDirectoryContents(path, name, data);
+    copyTemplate(path, name, data);
   });
 };
 
-export { createQuestions, createDirectoryContents, generator };
+export { createFile, createQuestions, copyTemplate, generator, renameFile };
