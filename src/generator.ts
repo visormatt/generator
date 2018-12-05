@@ -7,6 +7,7 @@ import inquirer from 'inquirer';
 import {
   checkFile,
   createDirectory,
+  rename,
   renameFile,
   writeFile
 } from './utils/files';
@@ -27,17 +28,19 @@ const createFile = (
   // This is only needed in the "template" folder for customization
   if (file === FILE_CUSTOMIZE) return;
 
-  const filename = renameFile(file, data);
   const templatePath = `${template}/${file}`;
   const stats = fs.statSync(templatePath);
   const path = `${PATH_CURRENT}/${destination}`;
 
-  const writePath = `${path}/${filename}`;
-
   if (stats.isFile()) {
+    const filename = renameFile(file, data);
+    const writePath = `${path}/${filename}`;
+
     ejs.renderFile(templatePath, data, writeFile(writePath));
   } else {
-    const newDestination = `${destination}/${file}`;
+    const filename = rename(file, data);
+    const newDestination = `${destination}/${filename}`;
+
     createDirectory(newDestination);
     console.log('---> NOT A FILE', templatePath, newDestination);
     copyTemplate(templatePath, newDestination, data);
@@ -51,17 +54,18 @@ const createFile = (
  */
 const createQuestions = (data: any) => {
   const { templates } = data;
+  const templateArray = fs.readdirSync(templates);
 
   // tslint:disable-next-line
   const name = `Lets give it a name, this will be used to create the directory as well.`;
 
   return [
     {
-      default: 1,
+      default: templateArray.length - 1,
       name: 'type',
       type: 'list',
       message: 'What project template would you like to generate?',
-      choices: fs.readdirSync(templates)
+      choices: templateArray
     },
     {
       name: 'name',

@@ -30,6 +30,17 @@ const readFile = (path: string) => {
 };
 
 /**
+ * @name rename
+ * @description tbd...
+ */
+const rename = (name: string, data: any = {}) => {
+  if (!name.startsWith('=')) return name;
+
+  const key = name.substr(1);
+  return data[key] ? data[key] : 'index';
+};
+
+/**
  * @name renameFile
  * @description Using an "=" prefix and the "key" of the value we'd like to
  * use for the new file name. This is most commonly the "name" we collect
@@ -37,13 +48,11 @@ const readFile = (path: string) => {
  * available as needed.
  */
 const renameFile = (filename: string, data: any = {}) => {
-  if (!filename.startsWith('=')) return filename;
-
   const parts = filename.split('.');
-  const key = parts[0].substr(1);
-  const name = data[key] ? data[key] : 'index';
+  const name = parts.slice(0, parts.length - 1).join('.');
+  const newName = rename(name, data);
 
-  return `${name}.${parts[1]}`;
+  return `${newName}.${parts[1]}`;
 };
 
 /**
@@ -69,6 +78,7 @@ export {
   checkFile,
   createDirectory,
   readFile,
+  rename,
   renameFile,
   renderTemplate,
   writeFile
