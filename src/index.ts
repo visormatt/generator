@@ -6,7 +6,7 @@ import '@babel/polyfill';
 // Internal
 import { checkForSettings } from './setup/helper';
 import { generator } from './generator';
-import { Generator as GeneratorClass } from './Class';
+// import { Generator as GeneratorClass } from './Class';
 
 /**
  * @name init

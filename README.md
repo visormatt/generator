@@ -9,4 +9,9 @@
 **Todo:**
 
 - [ ] Document the naming pattern for re-naming a file
+- [ ] Document custom values in the `.generator.config` file
 - [ ] Experiment with a custom callback / creation hook
+- [ ] Encapsulate into a single Class
+- [ ] Swap out Sync for Async methods
+- [ ] More graceful error handling and reporting
+  - Fine with not overriding, maybe a prompt though
