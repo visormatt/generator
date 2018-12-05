@@ -1,31 +1,68 @@
 const existsSync = jest.fn();
 const readFileSync = jest.fn();
+const renderFile = jest.fn();
 const writeFileSync = jest.fn();
 
-jest.mock('fs', () => ({
-  existsSync,
-  readFileSync,
-  writeFileSync
-}));
+jest.mock('ejs', () => ({ renderFile }));
+jest.mock('fs', () => ({ existsSync, readFileSync, writeFileSync }));
 
 // Internal
-import { readFile, writeFile } from '../files';
+import { checkFile, readFile, renderTemplate, writeFile } from '../files';
 
 describe('files', () => {
   const path = '/some/path/file.js';
+
+  beforeEach(() => {
+    existsSync.mockClear();
+    readFileSync.mockClear();
+    renderFile.mockClear();
+    writeFileSync.mockClear();
+  });
 
   it('should export the following methods', () => {
     expect(typeof readFile).toBe('function');
     expect(typeof writeFile).toBe('function');
   });
 
+  /**
+   * @ checkFile
+   */
+  describe('checkFile', () => {
+    const path = 'test_path';
+
+    it('should call "fs.existsSync"', () => {
+      checkFile(path);
+      expect(existsSync).toHaveBeenCalledWith(path);
+    });
+  });
+
+  /**
+   * @ readFile
+   */
   describe('readFile', () => {
-    it('should call these methods', () => {
+    it('should call "fs.readFileSync"', () => {
       readFile(path);
       expect(readFileSync).toHaveBeenCalledWith(path, 'utf8');
     });
   });
 
+  /**
+   * @ renderTemplate
+   */
+  describe('renderTemplate', () => {
+    const testTemplate = 'test_template';
+    const testDestination = 'test_destimation';
+    const testData = { test_key: 'test_value' };
+
+    it('should call the "ejs.renderFile" method', () => {
+      renderTemplate(testTemplate, testDestination, testData);
+      expect(renderFile).toHaveBeenCalled();
+    });
+  });
+
+  /**
+   * @ writeFile
+   */
   describe('writeFile', () => {
     let fn: any;
 

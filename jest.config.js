@@ -11,12 +11,7 @@ module.exports = {
   collectCoverage: false,
 
   // https://goo.gl/VBULZE
-  collectCoverageFrom: [
-    'src/**/*.js',
-    'src/**/*.jsx',
-    'src/**/*.ts',
-    'src/**/*.tsx'
-  ],
+  collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
 
   // https://goo.gl/6ydeXP
   coverageDirectory: '<rootDir>/coverage',
@@ -60,11 +55,11 @@ module.exports = {
   setupFiles: [],
 
   // https://goo.gl/x1mEBC
-  testMatch: ['<rootDir>/**/*.test.js', '<rootDir>/**/*.test.ts'],
+  testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/src/**/*.test.tsx'],
 
   // https://goo.gl/qoKy1U
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest'
+    '^.+\\.(ts|tsx)$': 'ts-jest'
   },
 
   // https://goo.gl/3j69X7

@@ -37,6 +37,24 @@ const createQuestions = (data: any) => {
   ];
 };
 
+const createFile = (
+  file: string,
+  template: string,
+  destination: string,
+  data: any
+) => {
+  // This is only needed in the "template" folder for customization
+  if (file === FILE_CUSTOMIZE) return;
+
+  const templatePath = `${template}/${file}`;
+  const stats = fs.statSync(templatePath);
+
+  if (stats.isFile()) {
+    const writePath = `${PATH_CURRENT}/${destination}/${file}`;
+    ejs.renderFile(templatePath, data, writeFile(writePath));
+  }
+};
+
 /**
  * @name createDirectoryContents
  * @description tbd...
@@ -46,22 +64,13 @@ const createDirectoryContents = (
   destination: string,
   data: any
 ) => {
-  const createFile = (file: string) => {
-    // This is only needed in the "template" folder for customization
-    if (file === FILE_CUSTOMIZE) return;
-
-    const templatePath = `${template}/${file}`;
-    const stats = fs.statSync(templatePath);
-
-    if (stats.isFile()) {
-      const writePath = `${PATH_CURRENT}/${destination}/${file}`;
-      ejs.renderFile(templatePath, data, writeFile(writePath));
-    }
-  };
-
   const filesToCreate = fs.readdirSync(template);
 
-  filesToCreate.forEach(createFile);
+  console.log('---> filesToCreate', filesToCreate);
+
+  filesToCreate.forEach((file: string) => {
+    createFile(file, template, destination, data);
+  });
 };
 
 /**

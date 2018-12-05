@@ -11,10 +11,10 @@ import { checkForSettings } from '../helper';
 
 describe('helper', () => {
   describe('checkForSettings', () => {
-    let fn;
-
     beforeEach(() => {
-      fn = checkForSettings();
+      findUp.mockClear();
+      readConfig.mockClear();
+      writeConfig.mockClear();
     });
 
     it('should be a function', () => {
@@ -22,7 +22,24 @@ describe('helper', () => {
     });
 
     it('should call these methods', () => {
+      checkForSettings();
       expect(findUp).toHaveBeenCalledWith('.generator.config');
+    });
+
+    it('should call call "readConfig" when we have a config', async () => {
+      findUp.mockImplementationOnce(() => true);
+      await checkForSettings();
+
+      expect(readConfig).toHaveBeenCalled();
+      expect(writeConfig).not.toHaveBeenCalled();
+    });
+
+    it('should call call "writeConfig" otherwise', async () => {
+      findUp.mockImplementationOnce(() => false);
+      await checkForSettings();
+
+      expect(readConfig).not.toHaveBeenCalled();
+      expect(writeConfig).toHaveBeenCalled();
     });
   });
 });

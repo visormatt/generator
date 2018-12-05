@@ -7,6 +7,11 @@ import { setup } from './index';
 import { logger } from '../utils/logger';
 import { readFile, renderTemplate } from '../utils/files';
 import { FILE_CONFIG, PATH_CURRENT } from '../utils/config';
+import {
+  MSG_SETUP_DEFAULT,
+  MSG_SETUP_REQUIRED,
+  MSG_SETUP_SUCCESS
+} from './constants';
 
 /**
  * @name readConfig
@@ -26,10 +31,10 @@ const readConfig = (path: string) => {
  * @description tbd...
  */
 const writeConfig = async (prompt = true) => {
-  let message = 'Running generator setup.\n';
+  let message = MSG_SETUP_DEFAULT;
 
   if (prompt) {
-    message = '⚠️  No configuration file found, running setup.\n';
+    message = MSG_SETUP_REQUIRED;
   }
 
   logger(chalk.red(message));
@@ -41,7 +46,7 @@ const writeConfig = async (prompt = true) => {
   const path = chalk.greenBright(destination);
 
   renderTemplate(template, destination, data);
-  logger(`\n✅ Configuration file created: ${path} \n`);
+  logger(MSG_SETUP_SUCCESS(path));
 
   return data;
 };
