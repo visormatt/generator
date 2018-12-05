@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import styles from './styles.css';
 
 interface <%= name %>Props {
-  className?: number;
+  className?: string;
 }
 
 interface <%= name %>State {
