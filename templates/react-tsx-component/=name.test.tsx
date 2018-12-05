@@ -1,13 +1,17 @@
+// Vendor
+import * as enzyme from 'enzyme';
+import * as React from 'react';
+
 // Internal
-import { <%= name %> } from './Component';
+import { <%= name %> } from './<%= name %>';
 
 describe('<%= name %>', () => {
-  let props;
-  let wrapper;
+  let props: any;
+  let wrapper: any;
 
   beforeEach(() => {
     props = {};
-    wrapper = shallow(<<%= name %> {...props} />);
+    wrapper = enzyme.shallow(<<%= name %> {...props} />);
   });
 
   it('renders', () => {

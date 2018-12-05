@@ -46,11 +46,21 @@ const createFile = (
   // This is only needed in the "template" folder for customization
   if (file === FILE_CUSTOMIZE) return;
 
+  let filename = file;
+
+  if (filename.startsWith('=')) {
+    const parts = filename.split('.');
+    const key = parts[0].substr(1);
+
+    filename = `${data[key]}.${parts[1]}`;
+    console.log('----> filename', filename);
+  }
+
   const templatePath = `${template}/${file}`;
   const stats = fs.statSync(templatePath);
 
   if (stats.isFile()) {
-    const writePath = `${PATH_CURRENT}/${destination}/${file}`;
+    const writePath = `${PATH_CURRENT}/${destination}/${filename}`;
     ejs.renderFile(templatePath, data, writeFile(writePath));
   }
 };

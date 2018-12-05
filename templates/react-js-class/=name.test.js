@@ -1,5 +1,5 @@
 // Internal
-import { <%= name %> } from './Component';
+import { <%= name %> } from './<%= name %>';
 
 describe('<%= name %>', () => {
   let props;
