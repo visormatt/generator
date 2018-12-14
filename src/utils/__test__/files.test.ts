@@ -7,7 +7,13 @@ jest.mock('ejs', () => ({ renderFile }));
 jest.mock('fs', () => ({ existsSync, readFileSync, writeFileSync }));
 
 // Internal
-import { checkFile, readFile, renderTemplate, writeFile } from '../files';
+import {
+  checkFile,
+  readFile,
+  renameFile,
+  renderTemplate,
+  writeFile
+} from '../files';
 
 describe('files', () => {
   const path = '/some/path/file.js';
@@ -43,6 +49,29 @@ describe('files', () => {
     it('should call "fs.readFileSync"', () => {
       readFile(path);
       expect(readFileSync).toHaveBeenCalledWith(path, 'utf8');
+    });
+  });
+
+  /**
+   * @ renameFile
+   */
+  describe.only('renameFile', () => {
+    const data = { name: 'example' };
+
+    const testCSS1 = '=name.css';
+    const testCSS2 = '=name.css.d.ts';
+    const testTS = '=name.ts';
+
+    it('should rename these files using the data provide', () => {
+      expect(renameFile(testCSS1, data)).toBe('example.css');
+      expect(renameFile(testCSS2, data)).toBe('example.css.d.ts');
+      expect(renameFile(testTS, data)).toBe('example.ts');
+    });
+
+    it('should rename these files to "index"', () => {
+      expect(renameFile(testCSS1)).toBe('index.css');
+      expect(renameFile(testCSS2)).toBe('index.css.d.ts');
+      expect(renameFile(testTS)).toBe('index.ts');
     });
   });
 

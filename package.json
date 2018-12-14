@@ -13,7 +13,6 @@
   "description": "A simple and customizable Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "dependencies": {
     "chalk": "^2.4.1",
-    "chalk-pipe": "^2.0.0",
     "ejs": "^2.6.1",
     "find-up": "^3.0.0",
     "inquirer": "^6.2.1"

@@ -49,10 +49,14 @@ const rename = (name: string, data: any = {}) => {
  */
 const renameFile = (filename: string, data: any = {}) => {
   const parts = filename.split('.');
-  const name = parts.slice(0, parts.length - 1).join('.');
+  const name = parts.shift();
+  const ext = parts.join('.');
+
+  if (!name) return filename;
+
   const newName = rename(name, data);
 
-  return `${newName}.${parts[1]}`;
+  return `${newName}.${ext}`;
 };
 
 /**

@@ -1,0 +1,25 @@
+#####################################################################
+#
+# Each line is a file pattern followed by one or more owners.
+#   - https://help.github.com/articles/about-codeowners/
+#
+# Order is important!
+#   - The last matching pattern takes the most precedence
+#   - If there is no match, the project `OWNERS` are assigned
+#
+#####################################################################
+
+
+#####################################################################
+# OWNERS
+#####################################################################
+*                           @visormatt
+
+
+#####################################################################
+# File Types
+#####################################################################
+*.css                       @visormatt
+*.md                        @visormatt
+*.sh                        @visormatt
+*.ts                        @visormatt

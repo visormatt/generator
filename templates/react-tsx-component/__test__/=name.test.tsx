@@ -3,10 +3,10 @@ import * as enzyme from 'enzyme';
 import * as React from 'react';
 
 // Internal
-import { <%= name %> } from './<%= name %>';
+import { <%= name %>, <%= name %>Props } from '../<%= name %>';
 
 describe('<%= name %>', () => {
-  let props: any;
+  let props: <%= name %>Props;
   let wrapper: any;
 
   beforeEach(() => {
