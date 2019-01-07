@@ -22,10 +22,10 @@ module.exports = {
   // https://goo.gl/v7RLxT
   coverageThreshold: {
     global: {
-      branches: 45,
-      functions: 50,
-      lines: 50,
-      statements: 50
+      branches: 70,
+      functions: 70,
+      lines: 70,
+      statements: 70
     }
   },
 
@@ -40,7 +40,7 @@ module.exports = {
   moduleDirectories: ['node_modules'],
 
   // https://goo.gl/PoKsCn
-  moduleFileExtensions: ['css', 'js', 'jsx', 'json', 'ts', 'tsx'],
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
 
   // https://goo.gl/tMECYz
   moduleNameMapper: {},
@@ -55,7 +55,11 @@ module.exports = {
   setupFiles: [],
 
   // https://goo.gl/x1mEBC
-  testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/src/**/*.test.tsx'],
+  testMatch: [
+    '<rootDir>/src/**/*.test.js',
+    '<rootDir>/src/**/*.test.ts',
+    '<rootDir>/src/**/*.test.tsx'
+  ],
 
   // https://goo.gl/qoKy1U
   transform: {

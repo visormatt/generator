@@ -2,9 +2,16 @@
 
 [![Circle CI][image-circle-ci]][link-circle-ci]
 [![CodeCov][image-codecov]][link-codecov]
-![Dependencies][image-dependencies]
+[![Dependencies][image-dependencies]][link-dependencies]
 
-This package was created to **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the [Yeoman Generator][link-react-up] I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
+This package was created to 🏎️💨 **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the [Yeoman Generator][link-react-up] I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
+
+**Project Goals**
+
+- Improve user customization
+- Customizable prompts and inputs
+- Solid test coverage
+- Updated packages
 
 **Dependencies**
 
@@ -14,19 +21,9 @@ This package was created to **SPEED** up the creation of any `boilerplate` code 
 - **[EJS][link-ejs]** Embedded JavaScript templating.
 - **[Inquirer][link-inquirer]** A collection of common interactive command line user interfaces.
 
-## Installation
+## Getting Started
 
-```bash
-# TODO
-```
-
-## Usage
-
-```bash
-generate
-
-# Follow the prompts and create your own
-```
+Getting started is pretty easy, just clone, install and get generating. It comes with several default templates that you can use, modify or remove. Take a look at the [Docs Folder]('./docs') to get going.
 
 <!-- Links: -->
 

@@ -42,8 +42,8 @@ const createFile = (
     const newDestination = `${destination}/${filename}`;
 
     createDirectory(newDestination);
-    console.log('---> NOT A FILE', templatePath, newDestination);
     copyTemplate(templatePath, newDestination, data);
+    // console.log('---> NOT A FILE', templatePath, newDestination);
   }
 };
 

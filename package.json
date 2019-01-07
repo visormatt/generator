@@ -54,13 +54,14 @@
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-react": "^3.6.0",
+    "typedoc": "^0.14.0",
     "typescript": "^3.1.5"
   },
   "files": [
     "generators",
     "templates"
   ],
-  "homepage": "https://github.com/visormatt/tooling",
+  "homepage": "https://github.com/visormatt/generator",
   "main": "dist/index.js",
   "husky": {
     "hooks": {
@@ -77,10 +78,11 @@
       "tslint --project tsconfig.json --config tslint.json'"
     ]
   },
-  "repository": "visormatt/tooling",
+  "repository": "visormatt/generator",
   "scripts": {
     "build": "npm run build:types && npm run build:js",
     "build:dev": "npm run build:js -- --source-maps inline --watch",
+    "build:docs": "typedoc --exclude '**/*.test.ts,src/examples/*' --out typedocs/ src/",
     "build:js": "babel src --ignore '**/__test__/,**/__mocks__/' --out-dir ./dist --extensions \".js,.ts,.tsx\" --source-maps inline ",
     "build:types": "tsc --emitDeclarationOnly",
     "lint": "npm run lint:js && npm run lint:ts",
