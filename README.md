@@ -23,7 +23,7 @@ This package was created to 🏎️💨 **SPEED** up the creation of any `boiler
 
 ## Getting Started
 
-Getting started is pretty easy, just clone, install and get generating. It comes with several default templates that you can use, modify or remove. Take a look at the [Docs Folder]('./docs') to get going.
+Getting started is pretty easy, just clone, install and get generating. It comes with several default templates that you can use, modify or remove. Take a look at the [Docs Folder](./docs) to get going.
 
 <!-- Links: -->
 
