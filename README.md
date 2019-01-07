@@ -1,16 +1,32 @@
-# Generator
+# 🏎️💨 Generator
 
 [![Circle CI][image-circle-ci]][link-circle-ci]
 [![CodeCov][image-codecov]][link-codecov]
 ![Dependencies][image-dependencies]
 
-This package was created to 🏎️💨 **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the Yeoman Generator I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
+This package was created to **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the Yeoman Generator I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
 
-**Core Dependencies**
+**Dependencies**
 
-- [NodeJS][link-nodejs] & [Typescript][link-typescript]
-- [EJS][link-ejs] templating
-- [Inquirer][link-inquirer] templating
+- **[NodeJS][link-nodejs]** JavaScript runtime built on Chrome's V8 JavaScript engine.
+- **[Typescript][link-typescript]**
+  A typed superset of Javascript that compiles to plain Javascript.
+- **[EJS][link-ejs]** Embedded JavaScript templating.
+- **[Inquirer][link-inquirer]** A collection of common interactive command line user interfaces.
+
+## Installation
+
+```bash
+# TODO
+```
+
+## Usage
+
+```bash
+generate
+
+# Follow the prompts and create your own
+```
 
 <!-- Links: -->
 
