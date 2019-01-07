@@ -1,6 +1,4 @@
-# Roadmap
-
-This package was created to 🏎️💨 **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the Yeoman Generator I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
+# 🗺️ Roadmap
 
 - [x] Move off of Yeoman as a dependency
 - [x] Fully written in ES6 and TypeScript
