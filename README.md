@@ -23,7 +23,23 @@ This package was created to 🏎️💨 **SPEED** up the creation of any `boiler
 
 ## Getting Started
 
-Getting started is pretty easy, just clone, install and get generating. It comes with several default templates that you can use, modify or remove. Take a look at the [Docs Folder](./docs) to get going.
+Getting started is pretty easy, just clone, install and get generating. It comes with several default templates that you can use, modify or remove. Take a look at the [Docs Folder](./docs) for more documentation or use the quick start below.
+
+**Quick Start**
+
+```bash
+# Have to clone (need to make it an NPM package)
+git clone git@github.com:visormatt/generator.git
+
+# Build it once
+npm run build:dev
+
+# Adds the `generate` CLI command (from package.json scripts/bin)
+npm link
+
+# Run the cli ~ select the template
+generate
+```
 
 <!-- Links: -->
 
