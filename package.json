@@ -96,8 +96,8 @@
     "test:logs": "jest --coverage --runInBand --watch",
     "test:update": "jest --updateSnapshot --watchAll --watch",
     "test:watch": "jest --onlyChanged --watch",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
+    "typescript:check": "tsc --noEmit",
+    "typescript:check:watch": "npm run typescript:check -- --watch",
     "postversion": "git push && git push --tags",
     "version": "npm run build && git add -A"
   }
