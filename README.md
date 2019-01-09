@@ -44,7 +44,7 @@ generate
 <!-- Links: -->
 
 [link-circle-ci]: https://circleci.com/gh/visormatt/generator/tree/master 'Circle CI'
-[link-codecov]: https://goo.gl/jD1QfD 'Codecov'
+[link-codecov]: https://codecov.io/gh/visormatt/generator 'Codecov'
 [link-dependencies]: https://david-dm.org/visormatt/generator 'Dependencies'
 [link-ejs]: https://ejs.co/ 'ejs'
 [link-inquirer]: https://github.com/SBoudrias/Inquirer.js 'Inquirer'
