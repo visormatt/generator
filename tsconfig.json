@@ -14,6 +14,7 @@
     "outDir": "./dist",
     "preserveConstEnums": true,
     "removeComments": false,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es5"

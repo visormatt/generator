@@ -85,7 +85,7 @@
     "build:docs": "typedoc --exclude '**/*.test.ts,src/examples/*' --out typedocs/ src/",
     "build:js": "babel src --ignore '**/__test__/,**/__mocks__/' --out-dir ./dist --extensions \".js,.ts,.tsx\" --source-maps inline ",
     "build:types": "tsc --emitDeclarationOnly",
-    "lint": "npm run lint:js && npm run lint:ts",
+    "lint": "npm run lint:ts",
     "lint:js": "eslint ./src",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
     "setup": "node dist/setup.js",

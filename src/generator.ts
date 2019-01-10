@@ -43,7 +43,6 @@ const createFile = (
 
     createDirectory(newDestination);
     copyTemplate(templatePath, newDestination, data);
-    // console.log('---> NOT A FILE', templatePath, newDestination);
   }
 };
 
@@ -98,6 +97,8 @@ const generator = async (config: any) => {
   return await inquirer.prompt(questions).then(async (answers: any) => {
     const { name, type } = answers;
     const { templates } = config;
+
+    const fullConfig = { ...answers, ...config };
     const path = `${templates}/${type}`;
     const pathQuestions = `${path}/${FILE_CUSTOMIZE}`;
     const hasQuestions = checkFile(pathQuestions);
@@ -106,13 +107,17 @@ const generator = async (config: any) => {
 
     if (hasQuestions) {
       const templateQuestions = require(pathQuestions);
+
       if (typeof templateQuestions === 'function') {
-        templateAnswers = await inquirer.prompt(templateQuestions(config));
+        const questions = templateQuestions(fullConfig);
+        templateAnswers = await inquirer.prompt(questions);
       } else {
         templateAnswers = await inquirer.prompt(templateQuestions);
       }
     } else {
-      logger(`\n💭 Tip: Create a "${FILE_CUSTOMIZE}" file. \n`);
+      // tslint:disable-next-line
+      const msg = `Tip: Create a "${FILE_CUSTOMIZE}" file to further customize.`;
+      logger('\n💭', msg);
     }
 
     const data = {
@@ -122,8 +127,6 @@ const generator = async (config: any) => {
       name,
       slug: 'TestingItOut'
     };
-
-    // console.log('---> data ', data);
 
     fs.mkdirSync(`${PATH_CURRENT}/${name}`);
     copyTemplate(path, name, data);

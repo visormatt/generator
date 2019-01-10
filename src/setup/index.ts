@@ -5,6 +5,10 @@ import inquirer from 'inquirer';
 import { Validation } from '../utils/validation';
 import { PATH_PACKAGE } from '../utils/config';
 
+/**
+ * @description Here we collect some basic information that we store in
+ * config file and make available to all templates at runtime.
+ */
 const questions = [
   {
     default: 'Matthew D. Scholta',
@@ -15,6 +19,12 @@ const questions = [
   {
     default: 'https://www.mattscholta.com',
     name: 'domain',
+    type: 'input',
+    validate: Validation.required
+  },
+  {
+    default: '@visormatt',
+    name: 'organization',
     type: 'input',
     validate: Validation.required
   },
