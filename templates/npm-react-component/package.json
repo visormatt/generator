@@ -1,9 +1,6 @@
 {
   "version": "0.0.1",
-  "author": "<%= domain %>",
-  "bugs": {
-    "url": "https://github.com/thredup/shamrock/issues"
-  },
+  "author": "<%= author %>",
   "dependencies": {
     "<%= author %>/styleguide": "*",
     "classnames": "*",
@@ -24,7 +21,7 @@
     "rollup": "*"
   },
   "externals": [
-    "<%= author %>/styleguide",
+    "<%= organization %>/styleguide",
     "@types/classnames",
     "@types/enzyme",
     "@types/enzyme-adapter-react-16",
@@ -44,7 +41,7 @@
   "license": "UNLICENSED",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
-  "name": "<%= author %>/<%= name %>",
+  "name": "<%= organization %>/<%= name %>",
   "private": false,
   "publishConfig": {
     "access": "restricted"
@@ -55,10 +52,9 @@
   },
   "scripts": {
     "build": "npm run build:prod",
-    "build:dev": "NODE_ENV=development rollup  --config-ext tsx -c ../../../build/bundler/rollup.config.babel.js -w",
-    "build:prod": "NODE_ENV=production rollup  --config-ext tsx -c ../../../build/bundler/rollup.config.babel.js",
+    "build:dev": "NODE_ENV=development rollup --config-ext tsx -c ../../../build/bundler/rollup.config.babel.js -w",
+    "build:prod": "NODE_ENV=production rollup --config-ext tsx -c ../../../build/bundler/rollup.config.babel.js",
     "test": "jest -c ../../../jest.config.js --testPathPattern='packages/private/<%= name %>/'",
     "test:watch": "jest -c ../../../jest.config.js --watchAll --watch --testPathPattern='packages/private/<%= name %>/'"
-  },
-  "gitHead": "19f8a100420cf497d91eeb39e28465f3a59ff332"
+  }
 }

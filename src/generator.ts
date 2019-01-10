@@ -55,21 +55,18 @@ const createQuestions = (data: any) => {
   const { templates } = data;
   const templateArray = fs.readdirSync(templates);
 
-  // tslint:disable-next-line
-  const name = `Lets give it a name, this will be used to create the directory as well.`;
-
   return [
     {
-      default: templateArray.length - 1,
+      // default: templateArray.length - 1,
       name: 'type',
       type: 'list',
-      message: 'What project template would you like to generate?',
+      message: 'Select a template:',
       choices: templateArray
     },
     {
       name: 'name',
       type: 'input',
-      message: `${name}\n`,
+      message: 'Output name:',
       validate: Validation.required
     }
   ];
