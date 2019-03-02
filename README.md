@@ -1,4 +1,4 @@
-# ⚔️ Generator
+# 🤖 Generator
 
 [![Circle CI][image-circle-ci]][link-circle-ci]
 [![CodeCov][image-codecov]][link-codecov]
