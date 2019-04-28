@@ -21,5 +21,9 @@ jobs:
             - ./node_modules
 
       - run:
-          name: test
+          name: Unit Tests
           command: npm run test:ci
+
+      - run:
+          name: Linters
+          command: npm run lint
