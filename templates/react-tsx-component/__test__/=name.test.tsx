@@ -1,5 +1,4 @@
 // Vendor
-import * as enzyme from 'enzyme';
 import * as React from 'react';
 
 // Internal
@@ -11,7 +10,7 @@ describe('<%= name %>', () => {
 
   beforeEach(() => {
     props = {};
-    wrapper = enzyme.shallow(<<%= name %> {...props} />);
+    wrapper = shallow(<<%= name %> {...props} />);
   });
 
   it('renders', () => {
