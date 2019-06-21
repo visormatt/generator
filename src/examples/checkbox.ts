@@ -1,7 +1,7 @@
 // Vendor
 import inquirer from 'inquirer';
 
-const CHOICES = [
+const choices = [
   { checked: true, name: 'Choice A' },
   new inquirer.Separator(),
   { checked: true, name: 'Choice B' },
@@ -10,15 +10,15 @@ const CHOICES = [
   { checked: true, name: 'Choice D' }
 ];
 
-const QUESTIONS = [
+const questions = [
   {
-    choices: CHOICES,
+    choices,
     message: 'Example Checkbox',
-    name: 'example-checkbox',
-    type: 'checkbox'
+    name: 'example-checkbox'
+    // type: 'confim'
   }
 ];
 
-const checkbox = () => inquirer.prompt(QUESTIONS);
+const checkbox = () => inquirer.prompt(questions);
 
 export { checkbox };

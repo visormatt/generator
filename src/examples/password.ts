@@ -1,7 +1,7 @@
 // Vendor
 import inquirer from 'inquirer';
 
-const QUESTIONS = [
+const questions: inquirer.Questions = [
   {
     message: 'Example Password',
     name: 'example-password',
@@ -9,6 +9,6 @@ const QUESTIONS = [
   }
 ];
 
-const password = () => inquirer.prompt(QUESTIONS);
+const password = () => inquirer.prompt(questions);
 
 export { password };

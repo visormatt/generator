@@ -51,7 +51,7 @@ const createFile = (
  * @description We may or may not require information when generating
  * our questions. This is one way we can tackle that.
  */
-const createQuestions = (data: any) => {
+const createQuestions = (data: any): inquirer.Questions => {
   const { templates } = data;
   const templateArray = fs.readdirSync(templates);
 

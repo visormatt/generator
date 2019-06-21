@@ -9,7 +9,7 @@ import { PATH_PACKAGE } from '../utils/config';
  * @description Here we collect some basic information that we store in
  * config file and make available to all templates at runtime.
  */
-const questions = [
+const questions: inquirer.Questions = [
   {
     default: 'Matthew D. Scholta',
     name: 'author',
