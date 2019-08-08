@@ -46,12 +46,16 @@ const createFile = (
   }
 };
 
+type MixedQuestions =
+  | inquirer.InputQuestionOptions
+  | inquirer.ListQuestionOptions;
+
 /**
  * @name createQuestions
  * @description We may or may not require information when generating
  * our questions. This is one way we can tackle that.
  */
-const createQuestions = (data: any): inquirer.Questions => {
+const createQuestions = (data: any): MixedQuestions[] => {
   const { templates } = data;
   const templateArray = fs.readdirSync(templates);
 

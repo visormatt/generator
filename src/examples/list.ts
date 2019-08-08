@@ -9,7 +9,7 @@ const choices = [
   { checked: true, name: 'Choice D' }
 ];
 
-const questions: inquirer.Questions = [
+const questions: inquirer.ListQuestionOptions[] = [
   {
     choices,
     message: 'Example List',
@@ -18,6 +18,6 @@ const questions: inquirer.Questions = [
   }
 ];
 
-const list = () => inquirer.prompt(questions);
+const list = (): Promise<any> => inquirer.prompt(questions);
 
 export { list };

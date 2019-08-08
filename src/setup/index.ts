@@ -9,7 +9,7 @@ import { PATH_PACKAGE } from '../utils/config';
  * @description Here we collect some basic information that we store in
  * config file and make available to all templates at runtime.
  */
-const questions: inquirer.Questions = [
+const questions: inquirer.Question[] = [
   {
     default: 'Matthew D. Scholta',
     name: 'author',
@@ -36,6 +36,6 @@ const questions: inquirer.Questions = [
   }
 ];
 
-const setup = () => inquirer.prompt(questions);
+const setup = (): Promise<any> => inquirer.prompt(questions);
 
 export { setup };

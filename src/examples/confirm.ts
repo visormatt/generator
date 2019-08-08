@@ -1,7 +1,7 @@
 // Vendor
 import inquirer from 'inquirer';
 
-const questions: inquirer.Questions = [
+const questions: inquirer.ConfirmQuestionOptions[] = [
   {
     default: true,
     message: 'Example Confirm',
@@ -10,6 +10,6 @@ const questions: inquirer.Questions = [
   }
 ];
 
-const confirm = () => inquirer.prompt(questions);
+const confirm = (): Promise<any> => inquirer.prompt(questions);
 
 export { confirm };

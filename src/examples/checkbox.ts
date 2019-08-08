@@ -10,7 +10,7 @@ const choices = [
   { checked: true, name: 'Choice D' }
 ];
 
-const questions = [
+const questions: inquirer.CheckboxQuestionOptions[] = [
   {
     choices,
     message: 'Example Checkbox',
@@ -19,6 +19,6 @@ const questions = [
   }
 ];
 
-const checkbox = () => inquirer.prompt(questions);
+const checkbox = (): Promise<any> => inquirer.prompt(questions);
 
 export { checkbox };

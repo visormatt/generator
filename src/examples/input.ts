@@ -1,7 +1,7 @@
 // Vendor
 import inquirer from 'inquirer';
 
-const questions: inquirer.Questions = [
+const questions: inquirer.InputQuestionOptions[] = [
   {
     message: 'Example Input',
     name: 'example-input',
@@ -9,6 +9,6 @@ const questions: inquirer.Questions = [
   }
 ];
 
-const input = () => inquirer.prompt(questions);
+const input = (): Promise<any> => inquirer.prompt(questions);
 
 export { input };
