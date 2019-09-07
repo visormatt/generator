@@ -1,8 +1,6 @@
 const renderFile = jest.fn(() => 'success');
 const readdirSync = jest.fn(() => ['file_one.txt', 'file_two.js']);
-const statSync = jest.fn(() => ({
-  isFile: () => true
-}));
+const statSync = jest.fn(() => ({ isFile: () => true }));
 
 jest.mock('ejs', () => ({ renderFile }));
 jest.mock('fs', () => ({ readdirSync, statSync }));
