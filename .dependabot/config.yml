@@ -1,0 +1,9 @@
+version: 1
+
+update_configs:
+  - package_manager: "javascript"
+    default_reviewers:
+      - "visormatt"
+    directory: "/"
+    target_branch: "master"
+    update_schedule: "weekly"
