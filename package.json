@@ -7,8 +7,8 @@
     "url": "https://www.mattscholta.com"
   },
   "bin": {
-    "generate": "./dist/index.js",
-    "generate:setup": "./dist/setup.js"
+    "generate": "dist/index.js",
+    "generate:setup": "dist/setup.js"
   },
   "description": "A simple and customizable Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "dependencies": {
