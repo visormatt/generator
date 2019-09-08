@@ -1,14 +1,14 @@
 # 🤖 Generator
 
-<!-- [![Circle CI][image-circle-ci]][link-circle-ci] -->
+[![Circle CI][image-circle-ci]][link-circle-ci]
+[![NPM Version][image-npm-version]][link-npm]
+[![CodeCov][image-codecov]][link-codecov]
+
 [![Dependencies][image-dependencies]][link-dependencies]
 [![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
 
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
-
-[![NPM Version][image-npm-version]][link-npm]
-[![CodeCov][image-codecov]][link-codecov]
 
 This package was created to 🏎️💨 **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the [Yeoman Generator][link-react-up] I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
 
@@ -29,27 +29,7 @@ This package was created to 🏎️💨 **SPEED** up the creation of any `boiler
 
 ## Getting Started
 
-Getting started is pretty easy, just clone, install and get generating. It comes with several default templates that you can use, modify or remove. Take a look at the [Docs Folder](./docs) for more documentation or use the quick start below.
-
-**Quick Start:**
-
-I need to wrap this up into an NPM package 📦 making it easier to use, but in the mean time we can clone and install it locally. The only 👉 caveat 👈 here is when running the commands below, your **Node versions must match** the projects Node version you want to use this generator.
-
-```bash
-# Have to clone (need to make it an NPM package)
-git clone git@github.com:visormatt/generator.git
-
-# Jump into the build
-cd generator/
-
-# Install the packages required to build
-npm run build
-
-# Adds the `generate` CLI command (from package.json ~ scripts/bin)
-npm link
-```
-
-👍 Now the tool is installed. The first time you run `generate` from the CLI you be prompted to customize a few fields, these are made available to the templates as variables. All this does is create a `.generator.config` file at the `root` of your project. As you navigate to the children running `generate` will bubble up searching for this file, if one is not found we assume you are starting a new project. Use it many places, create your own templates and if you have a free minute help me add some features 😉
+Getting started is as simple `npm i @visormatt/generator -g` and then running `generate` when you need to spin something up.
 
 <!-- Links: -->
 

@@ -1,6 +1,6 @@
 {
   "name": "@visormatt/generator",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "author": {
     "name": "Matthew D. Scholta",
     "email": "matthew.scholta@gmail.com",
@@ -101,7 +101,7 @@
     "lint": "npm run lint:ts",
     "lint:js": "eslint ./src",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
-    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "prepublish": "npm run clean && npm run lint && npm run test",
     "--publish": "np --no-release-draft",
     "--publish:dryrun": "np --no-release-draft --no-publish",
     "--publish:test": "npm publish --dry-run",
@@ -116,7 +116,7 @@
     "test:watch": "jest --onlyChanged --watch",
     "typescript:check": "tsc --noEmit",
     "typescript:check:watch": "npm run typescript:check -- --watch",
-    "--postversion": "git push && git push --tags",
-    "--version": "npm run build && git add -A"
+    "postversion": "git push && git push --tags",
+    "version": "npm run build && git add -A"
   }
 }
