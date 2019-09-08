@@ -1,6 +1,6 @@
 {
   "name": "@visormatt/generator",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "author": {
     "name": "Matthew D. Scholta",
     "email": "matthew.scholta@gmail.com",
@@ -101,9 +101,9 @@
     "lint:js": "eslint ./src",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
     "--prepublish": "npm run clean && npm run lint && npm run test && npm run build",
-    "publish": "np --no-release-draft",
-    "publish:dryrun": "np --no-release-draft --no-publish",
-    "publish:test": "npm publish --dry-run",
+    "--publish": "np --no-release-draft",
+    "--publish:dryrun": "np --no-release-draft --no-publish",
+    "--publish:test": "npm publish --dry-run",
     "setup": "node dist/setup.js",
     "start": "node dist/index.js",
     "start:dev": "npm run build:dev",
