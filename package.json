@@ -1,6 +1,6 @@
 {
   "name": "@visormatt/generator",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "author": {
     "name": "Matthew D. Scholta",
     "email": "matthew.scholta@gmail.com",
@@ -61,6 +61,7 @@
   },
   "files": [
     "dist",
+    "src/.generator.config",
     "templates"
   ],
   "homepage": "https://github.com/visormatt/generator",
