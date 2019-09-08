@@ -1,5 +1,5 @@
 {
-  "name": "generator",
+  "name": "@visormatt/generator",
   "version": "1.0.0",
   "author": {
     "name": "Matthew D. Scholta",
@@ -62,7 +62,6 @@
     "templates"
   ],
   "homepage": "https://github.com/visormatt/generator",
-  "main": "dist/index.js",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -78,7 +77,16 @@
       "tslint --project tsconfig.json --config tslint.json'"
     ]
   },
-  "repository": "visormatt/generator",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visormatt/generator.git"
+  },
   "scripts": {
     "build": "npm run build:types && npm run build:js",
     "build:dev": "npm run build:js -- --source-maps inline --watch",
@@ -89,6 +97,8 @@
     "lint": "npm run lint:ts",
     "lint:js": "eslint ./src",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
+    "publish": "npm publish",
+    "publish:test": "npm publish --dry-run",
     "setup": "node dist/setup.js",
     "start": "node dist/index.js",
     "start:dev": "npm run build:dev",
