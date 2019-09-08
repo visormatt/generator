@@ -16,12 +16,13 @@ import { generator } from './generator';
  */
 const init = async () => {
   const config = await checkForSettings();
-  await generator(config);
 
   // return new GeneratorClass({
   //   debug: true,
   //   ...config
   // });
+
+  await generator(config);
 };
 
 init();
