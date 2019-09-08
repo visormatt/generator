@@ -4,7 +4,6 @@
 [![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
-
 [![NPM Version][image-npm-version]][link-npm]
 [![CodeCov][image-codecov]][link-codecov]
 [![Circle CI][image-circle-ci]][link-circle-ci]
