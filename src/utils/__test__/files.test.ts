@@ -1,14 +1,16 @@
 const existsSync = jest.fn();
+const mkdirSync = jest.fn();
 const readFileSync = jest.fn();
 const renderFile = jest.fn();
 const writeFileSync = jest.fn();
 
 jest.mock('ejs', () => ({ renderFile }));
-jest.mock('fs', () => ({ existsSync, readFileSync, writeFileSync }));
+jest.mock('fs', () => ({ existsSync, mkdirSync, readFileSync, writeFileSync }));
 
 // Internal
 import {
   checkFile,
+  createDirectory,
   readFile,
   renameFile,
   renderTemplate,
@@ -20,13 +22,18 @@ describe('files', () => {
 
   beforeEach(() => {
     existsSync.mockClear();
+    mkdirSync.mockClear();
     readFileSync.mockClear();
     renderFile.mockClear();
     writeFileSync.mockClear();
   });
 
   it('should export the following methods', () => {
+    expect(typeof checkFile).toBe('function');
+    expect(typeof createDirectory).toBe('function');
     expect(typeof readFile).toBe('function');
+    expect(typeof renameFile).toBe('function');
+    expect(typeof renderTemplate).toBe('function');
     expect(typeof writeFile).toBe('function');
   });
 
@@ -43,6 +50,32 @@ describe('files', () => {
   });
 
   /**
+   * @ createDirectory
+   */
+  describe('createDirectory', () => {
+    const path = 'test_path';
+
+    it('should call "fs.existsSync"', () => {
+      createDirectory(path);
+      expect(existsSync).toHaveBeenCalledWith(path);
+    });
+
+    it('should call "mkdirSync" when "existsSync" return false', () => {
+      existsSync.mockReturnValue(false);
+      createDirectory(path);
+      expect(existsSync).toHaveBeenCalledWith(path);
+      expect(mkdirSync).toHaveBeenCalledWith(path, 484);
+    });
+
+    it('should not call "mkdirSync" when "existsSync" return true', () => {
+      existsSync.mockReturnValue(true);
+      createDirectory(path);
+      expect(existsSync).toHaveBeenCalledWith(path);
+      expect(mkdirSync).not.toHaveBeenCalled();
+    });
+  });
+
+  /**
    * @ readFile
    */
   describe('readFile', () => {
@@ -55,7 +88,7 @@ describe('files', () => {
   /**
    * @ renameFile
    */
-  describe.only('renameFile', () => {
+  describe('renameFile', () => {
     const data = { name: 'example' };
 
     const testCSS1 = '=name.css';
