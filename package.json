@@ -1,6 +1,6 @@
 {
   "name": "@visormatt/generator",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "author": {
     "name": "Matthew D. Scholta",
     "email": "matthew.scholta@gmail.com",
@@ -10,7 +10,7 @@
     "generate": "dist/index.js",
     "generate:setup": "dist/setup.js"
   },
-  "description": "A simple and customizable Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
+  "description": "A simple, customizable, command line tool. \nWritten in ES6 & TypeScript this generator allows the end user to configure unique, per-project templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",

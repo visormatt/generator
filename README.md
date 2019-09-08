@@ -1,34 +1,33 @@
 # 🤖 Generator
 
-[![Dependencies][image-dependencies]][link-dependencies]
-[![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
-[![Monthly Downloads][image-npm-monthly]][link-npm]
-[![Total Downloads][image-npm-total]][link-npm]
 [![NPM Version][image-npm-version]][link-npm]
 [![Dependabot][image-dependabot]][link-dependabot]
 [![CodeCov][image-codecov]][link-codecov]
-[![Circle CI][image-circle-ci]][link-circle-ci]
 
-This package was created to 🏎️💨 **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the [Yeoman Generator][link-react-up] I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
+[![Dependencies][image-dependencies]][link-dependencies]
+[![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
 
-**Project Goals:**
+[![Monthly Downloads][image-npm-monthly]][link-npm]
+[![Total Downloads][image-npm-total]][link-npm]
+<!-- [![Circle CI][image-circle-ci]][link-circle-ci] -->
 
-- Improve user customization
-- Customizable prompts and inputs
-- Solid test coverage
-- Updated packages
+## Overview
 
-**Dependencies:**
+This package was created to 🏎️💨 **SPEED** up the creation of `boilerplate` code & templates. It's easily configured and can be utilized across multiple projects. It can also be configured to share `templates` or each project can supply their own. Even better you can create your own templates using the [EJS][link-ejs] syntax.
 
-- **[NodeJS][link-nodejs]** JavaScript runtime built on Chrome's V8 JavaScript engine.
-- **[Typescript][link-typescript]**
-  A typed superset of Javascript that compiles to plain Javascript.
-- **[EJS][link-ejs]** Embedded JavaScript templating.
-- **[Inquirer][link-inquirer]** A collection of common interactive command line user interfaces.
+> Checkout the [docs](./docs/README.md) folder for the project details.
 
-## Getting Started
+## Installation
 
-Getting started is as simple `npm i @visormatt/generator -g` and then running `generate` when you need to spin something up.
+Installation is super simple, just install it like any other NPM package. The only caveat is the `--global` or `-g` flag which will install this `globally` for the version of NodeJS you're running. This is done to make use of the tool as a CLI script `generate` and this allows you to generate templates at any level within your project.
+
+```bash
+# Global Installation ~ enable CLI Command "generate"
+$ npm i @visormatt/generator -g
+
+# And you are off
+$ generate
+```
 
 <!-- Links: -->
 
@@ -48,7 +47,7 @@ Getting started is as simple `npm i @visormatt/generator -g` and then running `g
 
 [image-circle-ci]: https://circleci.com/gh/visormatt/generator/tree/master.svg?style=svg "Circle CI"
 [image-codecov]: https://codecov.io/gh/visormatt/generator/branch/master/graph/badge.svg "Codecov"
-[image-dependabot]: https://img.shields.io/badge/Dependabot-enabled-blue "Dependabot"
+[image-dependabot]: https://img.shields.io/badge/🤖dependabot-enabled-blue "Dependabot"
 [image-dependencies]: https://david-dm.org/visormatt/generator/status.svg "Dependencies"
 [image-dev-dependencies]: https://david-dm.org/visormatt/generator/dev-status.svg "DevDependencies"
 [image-npm-monthly]: https://img.shields.io/npm/dm/@visormatt/generator.svg "Monthly Downloads"
