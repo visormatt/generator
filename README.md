@@ -5,6 +5,7 @@
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
 [![NPM Version][image-npm-version]][link-npm]
+[![Dependabot][image-dependabot]][link-dependabot]
 [![CodeCov][image-codecov]][link-codecov]
 [![Circle CI][image-circle-ci]][link-circle-ci]
 
@@ -33,6 +34,7 @@ Getting started is as simple `npm i @visormatt/generator -g` and then running `g
 
 [link-circle-ci]: https://circleci.com/gh/visormatt/generator/tree/master "Circle CI"
 [link-codecov]: https://codecov.io/gh/visormatt/generator "Codecov"
+[link-dependabot]: https://dependabot.com/ "Dependabot"
 [link-dependencies]: https://david-dm.org/visormatt/generator "Dependencies"
 [link-dev-dependencies]: https://david-dm.org/visormatt/generator?type=dev "DevDependencies"
 [link-ejs]: https://ejs.co/ "ejs"
@@ -46,6 +48,7 @@ Getting started is as simple `npm i @visormatt/generator -g` and then running `g
 
 [image-circle-ci]: https://circleci.com/gh/visormatt/generator/tree/master.svg?style=svg "Circle CI"
 [image-codecov]: https://codecov.io/gh/visormatt/generator/branch/master/graph/badge.svg "Codecov"
+[image-dependabot]: https://img.shields.io/badge/Dependabot-enabled-blue "Dependabot"
 [image-dependencies]: https://david-dm.org/visormatt/generator/status.svg "Dependencies"
 [image-dev-dependencies]: https://david-dm.org/visormatt/generator/dev-status.svg "DevDependencies"
 [image-npm-monthly]: https://img.shields.io/npm/dm/@visormatt/generator.svg "Monthly Downloads"
