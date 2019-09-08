@@ -10,6 +10,6 @@
 .github/
 coverage/
 docs/
-src/
+# src/
 temp/
 typedocs/

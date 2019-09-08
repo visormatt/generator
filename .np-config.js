@@ -1,7 +1,7 @@
 module.exports = {
   anyBranch: true,
   cleanup: false,
-  contents: '.',
+  contents: './dist',
   publish: true,
   yarn: false,
   yolo: false
