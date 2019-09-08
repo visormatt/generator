@@ -6,7 +6,6 @@
 
 [![Dependencies][image-dependencies]][link-dependencies]
 [![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
-
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
 <!-- [![Circle CI][image-circle-ci]][link-circle-ci] -->
@@ -19,14 +18,17 @@ This package was created to 🏎️💨 **SPEED** up the creation of `boilerplat
 
 ## Installation
 
-Installation is super simple, just install it like any other NPM package. The only caveat is the `--global` or `-g` flag which will install this `globally` for the version of NodeJS you're running. This is done to make use of the tool as a CLI script `generate` and this allows you to generate templates at any level within your project.
+**Super simple** just install it like any other NPM package. The only caveat is the `--global` or `-g` flag which will install this `globally` for the version of NodeJS you're running. This is done to make use of the tool as a CLI script `generate` and this allows you to generate templates at any level within your project.
 
 ```bash
-# Global Installation ~ enable CLI Command "generate"
-$ npm i @visormatt/generator -g
+# Global installation
+npm i @visormatt/generator -g
 
-# And you are off
-$ generate
+# Run from the project root
+generate:setup
+
+# And now from anywhere
+generate
 ```
 
 <!-- Links: -->
