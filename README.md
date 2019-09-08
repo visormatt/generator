@@ -1,14 +1,14 @@
 # 🤖 Generator
 
-[![Circle CI][image-circle-ci]][link-circle-ci]
-[![NPM Version][image-npm-version]][link-npm]
-[![CodeCov][image-codecov]][link-codecov]
-
 [![Dependencies][image-dependencies]][link-dependencies]
 [![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
 
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
+
+[![NPM Version][image-npm-version]][link-npm]
+[![CodeCov][image-codecov]][link-codecov]
+[![Circle CI][image-circle-ci]][link-circle-ci]
 
 This package was created to 🏎️💨 **SPEED** up the creation of any `boilerplate` code / templates. This is a full rewrite of the [Yeoman Generator][link-react-up] I created nearly two years ago. It still works wonderfully actually, but as with all things there is room for improvement.
 
@@ -48,8 +48,8 @@ Getting started is as simple `npm i @visormatt/generator -g` and then running `g
 
 [image-circle-ci]: https://circleci.com/gh/visormatt/generator/tree/master.svg?style=svg "Circle CI"
 [image-codecov]: https://codecov.io/gh/visormatt/generator/branch/master/graph/badge.svg "Codecov"
-[image-dependencies]: https://david-dm.org/@visormatt/generator/status.svg "Dependencies"
-[image-dev-dependencies]: https://david-dm.org/@visormatt/generator/dev-status.svg "DevDependencies"
+[image-dependencies]: https://david-dm.org/visormatt/generator/status.svg "Dependencies"
+[image-dev-dependencies]: https://david-dm.org/visormatt/generator/dev-status.svg "DevDependencies"
 [image-npm-monthly]: https://img.shields.io/npm/dm/@visormatt/generator.svg "Monthly Downloads"
 [image-npm-total]: https://img.shields.io/npm/dt/@visormatt/generator.svg "Total Downloads"
 [image-npm-version]: https://img.shields.io/npm/v/@visormatt/generator.svg "NPM Version"
