@@ -60,7 +60,6 @@
     "typescript": "^3.6.2"
   },
   "files": [
-    "generators",
     "templates"
   ],
   "homepage": "https://github.com/visormatt/generator",
@@ -72,7 +71,7 @@
   "keywords": [],
   "license": "Apache-2.0",
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx}": [
       "eslint --config .eslintrc.js"
     ],
     "*.{ts,tsx}": [
@@ -101,7 +100,7 @@
     "lint:js": "eslint ./src",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
     "--prepublish": "npm run clean && npm run lint && npm run test && npm run build",
-    "--publish": "np --no-release-draft",
+    "publish": "np --no-release-draft",
     "--publish:dryrun": "np --no-release-draft --no-publish",
     "--publish:test": "npm publish --dry-run",
     "setup": "node dist/setup.js",
@@ -115,7 +114,7 @@
     "test:watch": "jest --onlyChanged --watch",
     "typescript:check": "tsc --noEmit",
     "typescript:check:watch": "npm run typescript:check -- --watch",
-    "postversion": "git push && git push --tags",
-    "version": "npm run build && git add -A"
+    "--postversion": "git push && git push --tags",
+    "--version": "npm run build && git add -A"
   }
 }
