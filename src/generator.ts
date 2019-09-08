@@ -95,43 +95,45 @@ const copyTemplate = (template: string, destination: string, data: any) => {
 const generator = async (config: any) => {
   const questions = createQuestions(config);
 
-  return await inquirer.prompt(questions).then(async (answers: any) => {
-    const { name, type } = answers;
-    const { templates } = config;
+  return await inquirer
+    .prompt(questions)
+    .then(async (answers: inquirer.Answers) => {
+      const { name, type } = answers;
+      const { templates } = config;
 
-    const fullConfig = { ...answers, ...config };
-    const path = `${templates}/${type}`;
-    const pathQuestions = `${path}/${FILE_CUSTOMIZE}`;
-    const hasQuestions = checkFile(pathQuestions);
+      const fullConfig = { ...answers, ...config };
+      const path = `${templates}/${type}`;
+      const pathQuestions = `${path}/${FILE_CUSTOMIZE}`;
+      const hasQuestions = checkFile(pathQuestions);
 
-    let templateAnswers = {};
+      let templateAnswers = {};
 
-    if (hasQuestions) {
-      const templateQuestions = require(pathQuestions);
+      if (hasQuestions) {
+        const templateQuestions = require(pathQuestions);
 
-      if (typeof templateQuestions === 'function') {
-        const questions = templateQuestions(fullConfig);
-        templateAnswers = await inquirer.prompt(questions);
+        if (typeof templateQuestions === 'function') {
+          const questions = templateQuestions(fullConfig);
+          templateAnswers = await inquirer.prompt(questions);
+        } else {
+          templateAnswers = await inquirer.prompt(templateQuestions);
+        }
       } else {
-        templateAnswers = await inquirer.prompt(templateQuestions);
+        // tslint:disable-next-line
+        const msg = `Tip: Create a "${FILE_CUSTOMIZE}" file to further customize.`;
+        logger('\n💭', msg);
       }
-    } else {
-      // tslint:disable-next-line
-      const msg = `Tip: Create a "${FILE_CUSTOMIZE}" file to further customize.`;
-      logger('\n💭', msg);
-    }
 
-    const data = {
-      ...config,
-      ...answers,
-      ...templateAnswers,
-      name,
-      slug: 'TestingItOut'
-    };
+      const data = {
+        ...config,
+        ...answers,
+        ...templateAnswers,
+        name,
+        slug: 'TestingItOut'
+      };
 
-    fs.mkdirSync(`${PATH_CURRENT}/${name}`);
-    copyTemplate(path, name, data);
-  });
+      fs.mkdirSync(`${PATH_CURRENT}/${name}`);
+      copyTemplate(path, name, data);
+    });
 };
 
 export { createFile, createQuestions, copyTemplate, generator, renameFile };
