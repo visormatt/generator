@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // https://goo.gl/C6nSYV
-// import '@babel/polyfill';
+import '@babel/polyfill';
 
 // Internal
 import { writeConfig } from './setup/config';
