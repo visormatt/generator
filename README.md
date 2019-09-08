@@ -1,14 +1,14 @@
 # 🤖 Generator
 
-[![NPM Version][image-npm-version]][link-npm]
-[![Dependabot][image-dependabot]][link-dependabot]
-[![CodeCov][image-codecov]][link-codecov]
-
 [![Dependencies][image-dependencies]][link-dependencies]
 [![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
 <!-- [![Circle CI][image-circle-ci]][link-circle-ci] -->
+
+[![NPM Version][image-npm-version]][link-npm]
+[![Dependabot][image-dependabot]][link-dependabot]
+[![CodeCov][image-codecov]][link-codecov]
 
 ## Overview
 
