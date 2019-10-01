@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "@babel/register": "^7.6.0",
     "@types/ejs": "^2.6.0",
     "@types/find-up": "^4.0.0",
