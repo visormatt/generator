@@ -32,7 +32,7 @@
     "@types/ejs": "^2.6.0",
     "@types/find-up": "^4.0.0",
     "@types/inquirer": "^6.5.0",
-    "@types/jest": "^24.0.19",
+    "@types/jest": "^24.0.22",
     "@types/rewire": "^2.5.28",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
