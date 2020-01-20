@@ -13,7 +13,7 @@
   "description": "A simple, customizable, command line tool. \nWritten in ES6 & TypeScript this generator allows the end user to configure unique, per-project templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@babel/plugin-transform-async-to-generator": "^7.7.4",
     "@babel/polyfill": "^7.7.0",
