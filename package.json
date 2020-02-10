@@ -51,7 +51,7 @@
     "lodash": "^4.17.15",
     "np": "^5.2.1",
     "prettier": "^1.19.1",
-    "rimraf": "^3.0.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^25.2.0",
     "tslint": "^6.0.0",
     "tslint-config-airbnb": "^5.11.2",
