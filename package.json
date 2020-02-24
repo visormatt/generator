@@ -29,7 +29,7 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/register": "^7.8.3",
-    "@types/ejs": "^3.0.0",
+    "@types/ejs": "^3.0.1",
     "@types/find-up": "^4.0.0",
     "@types/inquirer": "^6.5.0",
     "@types/jest": "^25.1.1",
