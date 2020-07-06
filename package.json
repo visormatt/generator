@@ -70,7 +70,10 @@
       "pre-commit": "lint-staged"
     }
   },
-  "keywords": [],
+  "keywords": [
+    "scaffolding",
+    "templates"
+  ],
   "license": "Apache-2.0",
   "lint-staged": {
     "*.{js,jsx}": [
