@@ -105,8 +105,10 @@ const generator = async (config: any) => {
   return await inquirer
     .prompt(questions)
     .then(async (answers: inquirer.Answers) => {
-      const { name, type } = answers;
-      const { templates } = config;
+      const { type } = answers;
+      const { folder, templates } = config;
+
+      const folderName = answers[folder] ?? answers[name];
 
       const fullConfig = { ...answers, ...config };
       const path = `${templates}/${type}`;
@@ -134,12 +136,12 @@ const generator = async (config: any) => {
         ...config,
         ...answers,
         ...templateAnswers,
-        name,
+        name: folderName,
         slug: 'TestingItOut'
       };
 
-      fs.mkdirSync(`${PATH_CURRENT}/${name}`);
-      copyTemplate(path, name, data);
+      fs.mkdirSync(`${PATH_CURRENT}/${folderName}`);
+      copyTemplate(path, folderName, data);
     });
 };
 
