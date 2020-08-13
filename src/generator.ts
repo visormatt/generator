@@ -56,8 +56,20 @@ type MixedQuestions =
  * our questions. This is one way we can tackle that.
  */
 const createQuestions = (data: any): MixedQuestions[] => {
-  const { templates } = data;
+  const { questions, templates } = data;
   const templateArray = fs.readdirSync(templates);
+
+  const templatingQuestions = questions?.map((question: string) => ({
+    name: question,
+    type: 'input',
+    message: `Output ${question}:`,
+    validate: Validation.required
+  })) ?? [{
+    name: 'name',
+    type: 'input',
+    message: 'Output name:',
+    validate: Validation.required
+  }];
 
   return [
     {
@@ -67,12 +79,7 @@ const createQuestions = (data: any): MixedQuestions[] => {
       message: 'Select a template:',
       choices: templateArray
     },
-    {
-      name: 'name',
-      type: 'input',
-      message: 'Output name:',
-      validate: Validation.required
-    }
+    ...templatingQuestions
   ];
 };
 
