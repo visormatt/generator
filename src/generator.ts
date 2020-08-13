@@ -105,10 +105,10 @@ const generator = async (config: any) => {
   return await inquirer
     .prompt(questions)
     .then(async (answers: inquirer.Answers) => {
-      const { type } = answers;
+      const { name, type } = answers;
       const { folder, templates } = config;
 
-      const folderName = answers[folder] ?? answers[name];
+      const folderName = answers[folder] ?? name;
 
       const fullConfig = { ...answers, ...config };
       const path = `${templates}/${type}`;
@@ -136,7 +136,6 @@ const generator = async (config: any) => {
         ...config,
         ...answers,
         ...templateAnswers,
-        name: folderName,
         slug: 'TestingItOut'
       };
 
