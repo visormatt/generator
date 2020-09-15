@@ -70,14 +70,27 @@ describe('generator', () => {
    */
   describe('createQuestions', () => {
     const templatePath = '/path/to/templates';
+    const templateQuestions = ['name', 'test'];
 
     it('should return 2 questions', async () => {
       const questions = await createQuestions({ templates: templatePath });
       expect(questions).toHaveLength(2);
     });
 
+    it('should return 3 questions', async () => {
+      const questions = await createQuestions({
+        questions: templateQuestions,
+        templates: templatePath
+      });
+      expect(questions).toHaveLength(3);
+    });
+
     it('should call "fs.readdirSync" to get the templates', async () => {
-      await createQuestions({ templates: templatePath });
+      await createQuestions({
+        questions: templateQuestions,
+        templates: templatePath
+      });
+
       expect(readdirSync).toHaveBeenCalledWith(templatePath);
     });
   });

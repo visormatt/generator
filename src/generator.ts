@@ -56,8 +56,20 @@ type MixedQuestions =
  * our questions. This is one way we can tackle that.
  */
 const createQuestions = (data: any): MixedQuestions[] => {
-  const { templates } = data;
+  const { questions, templates } = data;
   const templateArray = fs.readdirSync(templates);
+
+  const templatingQuestions = questions?.map((question: string) => ({
+    name: question,
+    type: 'input',
+    message: `Output ${question}:`,
+    validate: Validation.required
+  })) ?? [{
+    name: 'name',
+    type: 'input',
+    message: 'Output name:',
+    validate: Validation.required
+  }];
 
   return [
     {
@@ -67,12 +79,7 @@ const createQuestions = (data: any): MixedQuestions[] => {
       message: 'Select a template:',
       choices: templateArray
     },
-    {
-      name: 'name',
-      type: 'input',
-      message: 'Output name:',
-      validate: Validation.required
-    }
+    ...templatingQuestions
   ];
 };
 
@@ -99,7 +106,9 @@ const generator = async (config: any) => {
     .prompt(questions)
     .then(async (answers: inquirer.Answers) => {
       const { name, type } = answers;
-      const { templates } = config;
+      const { folder, templates } = config;
+
+      const folderName = answers[folder] ?? name;
 
       const fullConfig = { ...answers, ...config };
       const path = `${templates}/${type}`;
@@ -127,12 +136,11 @@ const generator = async (config: any) => {
         ...config,
         ...answers,
         ...templateAnswers,
-        name,
         slug: 'TestingItOut'
       };
 
-      fs.mkdirSync(`${PATH_CURRENT}/${name}`);
-      copyTemplate(path, name, data);
+      fs.mkdirSync(`${PATH_CURRENT}/${folderName}`);
+      copyTemplate(path, folderName, data);
     });
 };
 
