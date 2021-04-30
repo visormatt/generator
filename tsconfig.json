@@ -3,12 +3,16 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
-    "jsx": "react",
-    "lib": ["dom", "es6", "esnext"],
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["DOM", "es6", "esnext"],
+    "listFiles": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": false,
+    "noEmitOnError": true,
     "noImplicitAny": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
@@ -16,11 +20,12 @@
     "removeComments": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true,
     "target": "es5"
   },
 
-  "exclude": ["dist/", "templates/"],
+  "exclude": ["**/__test__/", "dist/", "node_modules", "templates/"],
   "include": ["src/"],
   "types": ["jest"]
 }
