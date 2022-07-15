@@ -63,11 +63,14 @@ module.exports = {
 
   // https://goo.gl/qoKy1U
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
+    '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest'
   },
 
   // https://goo.gl/3j69X7
-  transformIgnorePatterns: [],
+  transformIgnorePatterns: [
+    // `/node_modules/(?!chalk)`,
+    `chalk`
+  ],
 
   // https://goo.gl/8hnQTn
   verbose: false

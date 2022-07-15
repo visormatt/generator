@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["dom", "es6", "esnext"],
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": false,
     "noImplicitAny": true,
