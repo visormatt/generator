@@ -25,15 +25,15 @@ module.exports = {
       branches: 50,
       functions: 50,
       lines: 50,
-      statements: 50
-    }
+      statements: 50,
+    },
   },
 
   // https://goo.gl/LFWXti
   globals: {
     mount: true,
     render: true,
-    shallow: true
+    shallow: true,
   },
 
   // https://goo.gl/fhrRke
@@ -58,17 +58,20 @@ module.exports = {
   testMatch: [
     '<rootDir>/src/**/*.test.js',
     '<rootDir>/src/**/*.test.ts',
-    '<rootDir>/src/**/*.test.tsx'
+    '<rootDir>/src/**/*.test.tsx',
   ],
 
   // https://goo.gl/qoKy1U
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
+    '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
   },
 
   // https://goo.gl/3j69X7
-  transformIgnorePatterns: [],
+  transformIgnorePatterns: [
+    // `/node_modules/(?!chalk)`,
+    `chalk`,
+  ],
 
   // https://goo.gl/8hnQTn
-  verbose: false
+  verbose: false,
 };
