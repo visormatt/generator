@@ -1,4 +1,3 @@
-// Vendor
 import ejs from 'ejs';
 import fs from 'fs';
 

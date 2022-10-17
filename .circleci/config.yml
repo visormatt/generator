@@ -4,26 +4,21 @@ jobs:
   build:
     working_directory: ~/generator
     docker:
-      - image: circleci/node:12.16.1
+      - image: cimg/node:14.20
     steps:
       - checkout
-
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
-
       - run:
           name: install
           command: npm install
-
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-
       - run:
           name: Unit Tests
           command: npm run test:ci
-
       - run:
           name: Linters
           command: npm run lint

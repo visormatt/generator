@@ -1,7 +1,5 @@
-// Vendor
 import inquirer from 'inquirer';
 
-// Internal
 import { Validation } from '../utils/validation';
 import { PATH_PACKAGE } from '../utils/config';
 

@@ -1,8 +1,6 @@
-// Vendor
 const camelCase = require('lodash/camelCase');
 const upperFirst = require('lodash/upperFirst');
 
-// Internal
 var Validation = require('../../dist/utils/validation').Validation;
 
 /**
@@ -13,7 +11,6 @@ var Validation = require('../../dist/utils/validation').Validation;
 var questions = (opts) => {
   const { name } = opts;
   const suggestedName = upperFirst(camelCase(name));
-  // console.log('We can collect custom information per template', opts);
 
   return [
     {

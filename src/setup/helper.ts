@@ -1,4 +1,3 @@
-// Internal
 import findUp from 'find-up';
 import { readConfig, writeConfig } from './config';
 import { FILE_CONFIG } from '../utils/config';

@@ -1,4 +1,3 @@
-// Internal
 import { REGEX_VALID_PACKAGE } from '../utils/regex';
 
 /**

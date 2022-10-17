@@ -7,7 +7,6 @@ const writeFileSync = jest.fn();
 jest.mock('ejs', () => ({ renderFile }));
 jest.mock('fs', () => ({ existsSync, mkdirSync, readFileSync, writeFileSync }));
 
-// Internal
 import {
   checkFile,
   createDirectory,

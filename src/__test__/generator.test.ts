@@ -5,7 +5,6 @@ const statSync = jest.fn(() => ({ isFile: () => true }));
 jest.mock('ejs', () => ({ renderFile }));
 jest.mock('fs', () => ({ readdirSync, statSync }));
 
-// Internal
 import {
   copyTemplate,
   createFile,
@@ -14,8 +13,6 @@ import {
   renameFile
 } from '../generator';
 import { FILE_CUSTOMIZE } from '../utils/config';
-
-// jest.mock('fs');
 
 describe('generator', () => {
   beforeEach(() => {

@@ -1,11 +1,9 @@
-// Vendor
 import * as React from 'react';
 import classnames from 'classnames';
 
-// CSS
 import styles from './styles.css';
 
-interface <%= name %>Props {
+export interface <%= name %>Props {
   className?: string;
 }
 
@@ -13,7 +11,7 @@ interface <%= name %>Props {
  * @name <%= name %>
  * @description Stateless Component / Pure Function
  */
-const <%= name %>: React.SFC<<%= name %>Props> = (props) => {
+export const <%= name %> = (props: <%= name %>Props) => {
   const { className } = props;
   const classes = classnames(styles.component, className);
 
@@ -23,9 +21,3 @@ const <%= name %>: React.SFC<<%= name %>Props> = (props) => {
     </div>
   );
 };
-
-<%= name %>.defaultProps = {
-  className: ''
-};
-
-export { <%= name %>, <%= name %>Props };

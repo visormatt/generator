@@ -1,9 +1,7 @@
-// Vendor
 import * as enzyme from 'enzyme';
 import * as React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 
-// Internal
 import { <%= customName %>, <%= customName %>Props } from '../index';
 
 enzyme.configure({

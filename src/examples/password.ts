@@ -1,4 +1,3 @@
-// Vendor
 import inquirer from 'inquirer';
 
 const questions: inquirer.PasswordQuestionOptions[] = [

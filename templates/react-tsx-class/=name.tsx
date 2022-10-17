@@ -1,15 +1,13 @@
-// Vendor
 import * as React from 'react';
 import classnames from 'classnames';
 
-// CSS
 import styles from './styles.css';
 
-interface <%= name %>Props {
+export interface <%= name %>Props {
   className?: string;
 }
 
-interface <%= name %>State {
+export interface <%= name %>State {
   open: boolean;
 }
 
@@ -17,7 +15,7 @@ interface <%= name %>State {
  * @class <%= name %>
  * @description Brief description
  */
-class <%= name %> extends React.Component<<%= name %>Props, <%= name %>State> {
+export class <%= name %> extends React.Component<<%= name %>Props, <%= name %>State> {
   public static defaultProps: any;
 
   public state: <%= name %>State = {
@@ -39,9 +37,3 @@ class <%= name %> extends React.Component<<%= name %>Props, <%= name %>State> {
     console.log('- onChange event', this.state, this.props);
   };
 }
-
-<%= name %>.defaultProps = {
-  className: ''
-};
-
-export { <%= name %>, <%= name %>Props, <%= name %>State };

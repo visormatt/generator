@@ -1,10 +1,9 @@
 const prompt = jest.fn();
 
+import { setup } from '../index';
+
 // We just need to know these are triggered
 jest.mock('inquirer', () => ({ prompt }));
-
-// Internal
-import { setup } from '../index';
 
 describe('setup', () => {
   it('should export a "setup" function', () => {

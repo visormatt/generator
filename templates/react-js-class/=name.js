@@ -1,15 +1,13 @@
-// Vendor
 import React from 'react';
 import classnames from 'classnames';
 
-// CSS
 import styles from './styles.css';
 
 /**
  * @class <%= name %>
  * @description Brief description
  */
-class <%= name %> extends React.Component {
+export class <%= name %> extends React.Component {
   state = {
     open: false
   };
@@ -30,8 +28,6 @@ class <%= name %> extends React.Component {
   };
 }
 
-<%= name %>.defaultProps = {
+export <%= name %>.defaultProps = {
   className: ''
 };
-
-export { <%= name %> as default, <%= name %> };

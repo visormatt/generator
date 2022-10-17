@@ -4,7 +4,6 @@ const Separator = jest.fn();
 // We just need to know these are triggered
 jest.mock('inquirer', () => ({ prompt, Separator }));
 
-// Internal
 import { checkbox } from '../checkbox';
 import { confirm } from '../confirm';
 import { input } from '../input';
