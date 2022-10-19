@@ -1,8 +1,6 @@
-// Vendor
 import chalk from 'chalk';
 import { resolve } from 'path';
 
-// Internal
 import { setup } from './index';
 import { logger } from '../utils/logger';
 import { readFile, renderTemplate } from '../utils/files';

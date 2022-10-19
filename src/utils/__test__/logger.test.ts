@@ -1,4 +1,5 @@
-// Internal
+/** @jest-environment jsdom */
+
 import { logger } from '../logger';
 
 describe('logger', () => {

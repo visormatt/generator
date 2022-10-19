@@ -1,4 +1,3 @@
-// Internal
 import { REGEX_VALID_PACKAGE } from '../regex';
 
 const newRegex = (exp: any) => new RegExp(exp);

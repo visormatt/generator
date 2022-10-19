@@ -8,10 +8,19 @@ coverage:
   round: down
   range: '70...100'
 
+  # status:
+  #   project: yes
+  #   patch: yes
+  #   changes: no
+
   status:
-    project: yes
-    patch: yes
-    changes: no
+    # WIP: https://docs.codecov.io/docs/commit-status#patch-status
+    # patch: off
+
+    # WIP: https://docs.codecov.com/docs/common-recipe-list#ease-target-coverage
+    project:
+      default:
+        threshold: 5%
 
 parsers:
   gcov:

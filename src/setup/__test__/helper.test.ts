@@ -6,7 +6,6 @@ const writeConfig = jest.fn();
 jest.mock('find-up', () => findUp);
 jest.mock('../config', () => ({ readConfig, writeConfig }));
 
-// Internal
 import { checkForSettings } from '../helper';
 
 describe('helper', () => {

@@ -1,13 +1,15 @@
+import * as React from 'react';
 import classnames from 'classnames';
-import React from 'react';
 
-import styles from './styles.css';
+export interface <%= name %>Props {
+  className?: string;
+}
 
 /**
  * @name <%= name %>
  * @description Stateless Component / Pure Function
  */
-export const <%= name %> = (props) => {
+export const <%= name %> = (props: <%= name %>Props) => {
   const { className } = props;
   const classes = classnames(styles.component, className);
 
@@ -16,8 +18,4 @@ export const <%= name %> = (props) => {
       <h2><%= name %></h2>
     </div>
   );
-};
-
-export <%= name %>.defaultProps = {
-  className: ''
 };

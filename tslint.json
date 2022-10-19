@@ -1,14 +1,25 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint-react", "tslint:recommended", "tslint-config-airbnb"],
+  "extends": [
+    "tslint-react",
+    "tslint:recommended",
+    "tslint-config-airbnb"
+  ],
   "jsRules": {},
   "linterOptions": {
-    "exclude": ["templates/**/*"]
+    "exclude": [
+      "templates/**/*"
+    ]
   },
   "rules": {
-    "align": [false],
+    "align": [
+      false
+    ],
     "import-name": false,
-    "interface-name": [true, "never-prefix"],
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
     "max-line-length": [
       true,
       {
@@ -21,7 +32,11 @@
     "no-shadowed-variable": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "semicolon": [
+      true,
+      "always",
+      "ignore-bound-class-methods"
+    ],
     "trailing-comma": [
       true,
       {
@@ -29,7 +44,11 @@
         "singleline": "never"
       }
     ],
-    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case"]
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
   },
   "rulesDirectory": []
 }

@@ -1,4 +1,3 @@
-// Vendor
 import { resolve } from 'path';
 
 /**

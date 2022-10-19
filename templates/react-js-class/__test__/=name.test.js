@@ -1,4 +1,3 @@
-// Internal
 import { <%= name %> } from '../<%= name %>';
 
 describe('<%= name %>', () => {

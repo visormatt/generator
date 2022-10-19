@@ -1,4 +1,3 @@
-// Internal
 import { Validation } from '../validation';
 
 describe('Validation', () => {

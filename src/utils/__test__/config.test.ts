@@ -1,4 +1,3 @@
-// Internal
 import { PATH_PACKAGE, PATH_CURRENT } from '../config';
 
 describe('files', () => {

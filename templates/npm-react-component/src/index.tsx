@@ -1,18 +1,16 @@
-// Vendor
 import * as React from 'react';
 import classnames from 'classnames';
 
-// CSS
 import styles from './styles.css';
 
-enum <%= customName %>Enum {
+export enum <%= customName %>Enum {
   Coral = 'coral',
   Dark = 'dark',
   Green = 'green',
   Light = 'light'
 }
 
-interface <%= customName %>Props {
+export interface <%= customName %>Props {
   className?: string;
 }
 
@@ -20,7 +18,7 @@ interface <%= customName %>Props {
  * @name <%= customName %>
  * @description Stateless Component / Pure Function
  */
-const <%= customName %>: React.SFC<<%= customName %>Props> = (props) => {
+export const <%= customName %> = (props: <%= customName %>Props) => {
   const { className } = props;
   const classesComponent = classnames(styles.component, className);
 
@@ -35,9 +33,3 @@ const <%= customName %>: React.SFC<<%= customName %>Props> = (props) => {
     </div>
   );
 };
-
-<%= customName %>.defaultProps = {
-  className: ''
-};
-
-export { <%= customName %>, <%= customName %>Props, <%= customName %>Enum };

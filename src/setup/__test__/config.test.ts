@@ -15,7 +15,6 @@ jest.mock('../../utils/files', () => ({ readFile, renderTemplate }));
 jest.mock('../../utils/logger', () => ({ logger }));
 jest.mock('../index', () => ({ setup }));
 
-// Internal
 import { readConfig, writeConfig } from '../config';
 
 describe('config', () => {

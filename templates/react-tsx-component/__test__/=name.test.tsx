@@ -1,8 +1,6 @@
-// Vendor
 import * as enzyme from 'enzyme';
 import * as React from 'react';
 
-// Internal
 import { <%= name %>, <%= name %>Props } from '../<%= name %>';
 
 describe('<%= name %>', () => {
