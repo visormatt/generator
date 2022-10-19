@@ -16,12 +16,12 @@
     "chalk": "^4.1.2",
     "ejs": "^3.1.8",
     "find-up": "^5.0.0",
-    "inquirer": "^7.3.3"
+    "inquirer": "^9.1.4"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.1",
     "@types/find-up": "^4.0.0",
-    "@types/inquirer": "^7.3.3",
+    "@types/inquirer": "^9.0.2",
     "@types/jest": "^29.2.0",
     "@types/rewire": "^2.5.28",
     "babel-core": "^7.0.0-bridge.0",
