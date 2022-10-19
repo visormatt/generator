@@ -1,7 +1,8 @@
 # 🤖 Generator
 
-[![Dependencies][image-dependencies]][link-dependencies]
-[![DevDependencies][image-dev-dependencies]][link-dev-dependencies]
+<!-- [![Dependencies][image-dependencies]][link-dependencies] -->
+<!-- [![DevDependencies][image-dev-dependencies]][link-dev-dependencies] -->
+
 [![Monthly Downloads][image-npm-monthly]][link-npm]
 [![Total Downloads][image-npm-total]][link-npm]
 
