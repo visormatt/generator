@@ -13,7 +13,7 @@
   },
   "description": "A simple, customizable, command line tool. \nWritten in ES6 & TypeScript this generator allows the end user to configure unique, per-project templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.2.0",
     "ejs": "^3.1.8",
     "find-up": "^5.0.0",
     "inquirer": "^7.3.3"
